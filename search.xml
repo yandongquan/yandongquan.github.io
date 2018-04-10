@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[安装NodeJs]]></title>
-    <url>%2F2018%2F04%2F09%2F%E5%AE%89%E8%A3%85NodeJs.html</url>
-    <content type="text"><![CDATA[下载Node.js去官网官网：https://nodejs.org/en/download/ 下载后 ftp上传或者命令下载压缩包1wget https://nodejs.org/dist/v8.10.0/node-v8.10.0-linux-x64.tar.xz 解压12[root@localhost home]# tar -xJf node-v8.10.0-linux-x64.tar.xz[root@localhost home]# cd /usr/local/data/node-v8.10 配置1vi /etc/profile 在最后加上：12export NODE_HOME=/usr/local/data/node-v8.10export PATH=$NODE_HOME/bin:$PATH 让环境变量生效1[root@localhost node-v8.10]# source /etc/profile 新版本都有自己npm 所以不需要再安装了 测试1234[root@localhost node-v8.10]# node -vv8.10.0[root@localhost node-v8.10]# npm -v5.6.0]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>安装NodeJs</title>
+      <link href="/2018/04/09/%E5%AE%89%E8%A3%85NodeJs.html"/>
+      <url>/2018/04/09/%E5%AE%89%E8%A3%85NodeJs.html</url>
+      <content type="html"><![CDATA[<h4 id="下载Node-js"><a href="#下载Node-js" class="headerlink" title="下载Node.js"></a>下载Node.js</h4><p>去官网官网：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></p><p>下载后 ftp上传或者命令下载压缩包<br><a id="more"></a><br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v8.<span class="number">10.0</span>/<span class="keyword">node</span><span class="title">-v8</span>.<span class="number">10.0</span>-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></p><h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost <span class="built_in">home</span>]<span class="meta"># tar -xJf node-v8.10.0-linux-x64.tar.xz</span></span><br><span class="line">[root@localhost <span class="built_in">home</span>]<span class="meta"># cd /usr/local/data/node-v8.10</span></span><br></pre></td></tr></table></figure><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span> /etc/<span class="keyword">profile</span></span><br></pre></td></tr></table></figure><p>在最后加上：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">NODE_HOME</span>=/usr/local/data/node-v8.10</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$NODE_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure></p><p>让环境变量生效<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost <span class="keyword">node</span><span class="title">-v8</span>.<span class="number">10</span>]<span class="comment"># source /etc/profile</span></span><br></pre></td></tr></table></figure></p><p>新版本都有自己npm 所以不需要再安装了</p><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost <span class="keyword">node</span><span class="title">-v8</span>.<span class="number">10</span>]<span class="comment"># node -v</span></span><br><span class="line">v8.<span class="number">10.0</span></span><br><span class="line">[root@localhost <span class="keyword">node</span><span class="title">-v8</span>.<span class="number">10</span>]<span class="comment"># npm -v</span></span><br><span class="line"><span class="number">5.6</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>]]></content>
+      
       <categories>
-        <category>前端</category>
+          
+          <category> 前端 </category>
+          
       </categories>
-      <tags>
-        <tag>Node.js</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
