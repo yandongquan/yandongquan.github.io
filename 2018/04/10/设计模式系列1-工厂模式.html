@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="工厂模式工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 使用场景1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。2、数据库访问，当用户不知道最后系统">
+<meta name="description" content="工厂模式工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 使用场景">
 <meta name="keywords" content="设计模式,工厂模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式系列1 工厂模式">
 <meta property="og:url" content="https://yandongquan.github.io/2018/04/10/设计模式系列1-工厂模式.html">
 <meta property="og:site_name" content="YanDongquan&#39;s Blog">
-<meta property="og:description" content="工厂模式工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 使用场景1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。2、数据库访问，当用户不知道最后系统">
+<meta property="og:description" content="工厂模式工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 使用场景">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-10T10:34:04.492Z">
+<meta property="og:updated_time" content="2018-04-10T10:36:47.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式系列1 工厂模式">
-<meta name="twitter:description" content="工厂模式工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 使用场景1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。2、数据库访问，当用户不知道最后系统">
+<meta name="twitter:description" content="工厂模式工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 使用场景">
 
 
 
@@ -349,7 +349,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-10T18:34:04+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-10T18:36:47+08:00">
                 2018-04-10
               </time>
             
@@ -456,7 +456,8 @@
 
       
         <h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><p>工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
-<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><p>1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。<br>2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。<br>3、设计一个连接服务器的框架，需要三个协议，”POP3”、”IMAP”、”HTTP”，可以把这三个作为产品类，共同实现一个接口。</p>
+<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><a id="more"></a>
+<p>1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。<br>2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。<br>3、设计一个连接服务器的框架，需要三个协议，”POP3”、”IMAP”、”HTTP”，可以把这三个作为产品类，共同实现一个接口。</p>
 <h4 id="五种工厂模式"><a href="#五种工厂模式" class="headerlink" title="五种工厂模式"></a>五种工厂模式</h4><h5 id="1）简单工厂（静态）"><a href="#1）简单工厂（静态）" class="headerlink" title="1）简单工厂（静态）"></a>1）简单工厂（静态）</h5><p>案例：生产车辆</p>
 <p>抽象一个汽车基类，或者是接口<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">CarPrototype</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生产汽车</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">produce</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>生产奥迪汽车（具体的产品类）</p>
