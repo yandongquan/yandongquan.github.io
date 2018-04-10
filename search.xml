@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[安装NodeJs]]></title>
+    <url>%2F2018%2F04%2F09%2F%E5%AE%89%E8%A3%85NodeJs.html</url>
+    <content type="text"><![CDATA[下载Node.js去官网官网：https://nodejs.org/en/download/ 下载后 ftp上传或者命令下载压缩包1wget https://nodejs.org/dist/v8.10.0/node-v8.10.0-linux-x64.tar.xz 解压12[root@localhost home]# tar -xJf node-v8.10.0-linux-x64.tar.xz[root@localhost home]# cd /usr/local/data/node-v8.10 配置1vi /etc/profile 在最后加上：12export NODE_HOME=/usr/local/data/node-v8.10export PATH=$NODE_HOME/bin:$PATH 让环境变量生效1[root@localhost node-v8.10]# source /etc/profile 新版本都有自己npm 所以不需要再安装了 测试1234[root@localhost node-v8.10]# node -vv8.10.0[root@localhost node-v8.10]# npm -v5.6.0]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+</search>
