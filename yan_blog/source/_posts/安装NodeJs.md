@@ -1,8 +1,10 @@
 ---
-title: 安装 NodeJs 
+title: 安装NodeJs 
 date: 2018-04-09 22:45:48
-tags: Node.js
-categories: 前端
+tags: 
+ - Node.js
+categories: 
+ - 前端
 copyright: true
 ---
 
