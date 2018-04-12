@@ -210,11 +210,7 @@
                  <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span>
                {% endif %}
                  <span class="leancloud-visitors-count"></span>
-                 
-                 <span id="busuanzi_container_page_pv">
-                  <span id="busuanzi_value_page_pv"></span>
-                  <span> ℃</span>
-                </span>
+                 <span> ℃</span>
              </span>
           {% endif %}
 
