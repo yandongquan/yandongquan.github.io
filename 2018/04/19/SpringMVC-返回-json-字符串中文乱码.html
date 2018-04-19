@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="SpringBoot,Web," />
+  <meta name="keywords" content="SpringMVC," />
 
 
 
@@ -85,23 +85,24 @@
 
 
 
-<meta name="description" content="静态资源目录Spring Boot默认提供静态资源目录位置需置于classpath下，目录名需符合如下规则：1234/static/public/resources/META-INF/resources">
-<meta name="keywords" content="SpringBoot,Web">
+<meta name="description" content="####原因  最近在写一些小的Demo案例，但是被AJAX的 json 返回乱码折磨了好久。最后通过研究StringHttpMessageConverter源代码发现，开发者很坑的使用了”ISO-8859-1”作为默认编码。经过代码测试，下面给出四种方法解决SpringMVC 返回 json 字符串中文乱码。（本文spring版本4.3.11.RELEASE）">
+<meta name="keywords" content="SpringMVC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot入门之Web开发">
-<meta property="og:url" content="https://yandongquan.github.io/2018/04/11/SpringBoot入门之Web开发.html">
+<meta property="og:title" content="SpringMVC 返回 json 字符串中文乱码">
+<meta property="og:url" content="https://yandongquan.github.io/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html">
 <meta property="og:site_name" content="YanDongquan&#39;s Blog">
-<meta property="og:description" content="静态资源目录Spring Boot默认提供静态资源目录位置需置于classpath下，目录名需符合如下规则：1234/static/public/resources/META-INF/resources">
+<meta property="og:description" content="####原因  最近在写一些小的Demo案例，但是被AJAX的 json 返回乱码折磨了好久。最后通过研究StringHttpMessageConverter源代码发现，开发者很坑的使用了”ISO-8859-1”作为默认编码。经过代码测试，下面给出四种方法解决SpringMVC 返回 json 字符串中文乱码。（本文spring版本4.3.11.RELEASE）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20170904100613965?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170904100502316?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170904101404072?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170904101553043?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-04-11T03:34:10.848Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20180403144507128?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180403144547210?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180403145012839?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/2018040314595757?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/2018040314595757?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-04-19T01:14:04.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot入门之Web开发">
-<meta name="twitter:description" content="静态资源目录Spring Boot默认提供静态资源目录位置需置于classpath下，目录名需符合如下规则：1234/static/public/resources/META-INF/resources">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170904100613965?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="SpringMVC 返回 json 字符串中文乱码">
+<meta name="twitter:description" content="####原因  最近在写一些小的Demo案例，但是被AJAX的 json 返回乱码折磨了好久。最后通过研究StringHttpMessageConverter源代码发现，开发者很坑的使用了”ISO-8859-1”作为默认编码。经过代码测试，下面给出四种方法解决SpringMVC 返回 json 字符串中文乱码。（本文spring版本4.3.11.RELEASE）">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180403144507128?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -131,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://yandongquan.github.io/2018/04/11/SpringBoot入门之Web开发.html"/>
+  <link rel="canonical" href="https://yandongquan.github.io/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html"/>
 
 
 
 
 
-  <title>SpringBoot入门之Web开发 | YanDongquan's Blog</title>
+  <title>SpringMVC 返回 json 字符串中文乱码 | YanDongquan's Blog</title>
   
 
 
@@ -309,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yandongquan.github.io/2018/04/11/SpringBoot入门之Web开发.html">
+    <link itemprop="mainEntityOfPage" href="https://yandongquan.github.io/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan Dongquan">
@@ -326,7 +327,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">SpringBoot入门之Web开发</h2>
+          <h2 class="post-title" itemprop="name headline">SpringMVC 返回 json 字符串中文乱码</h2>
         
 
         <div class="post-meta">
@@ -338,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T11:31:42+08:00">
-                2018-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T09:12:37+08:00">
+                2018-04-19
               </time>
             
 
@@ -354,8 +355,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-11T11:34:10+08:00">
-                2018-04-11
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-19T09:14:04+08:00">
+                2018-04-19
               </time>
             
           </span>
@@ -373,8 +374,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/分布式/" itemprop="url" rel="index">
-                    <span itemprop="name">分布式</span>
+                  <a href="/categories/后台/" itemprop="url" rel="index">
+                    <span itemprop="name">后台</span>
                   </a>
                 </span>
 
@@ -391,8 +392,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/11/SpringBoot入门之Web开发.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/SpringBoot入门之Web开发.html" itemprop="commentCount"></span>
+                <a href="/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  448 字
+                  1,074 字
                 </span>
               
 
@@ -435,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
               <span>
@@ -459,31 +460,35 @@
       
 
       
-        <h4 id="静态资源目录"><a href="#静态资源目录" class="headerlink" title="静态资源目录"></a><strong>静态资源目录</strong></h4><p>Spring Boot默认提供静态资源目录位置需置于classpath下，目录名需符合如下规则：<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/static</span></span><br><span class="line"><span class="string">/public</span></span><br><span class="line"><span class="string">/resources</span></span><br><span class="line"><span class="string">/META-INF/resources</span></span><br></pre></td></tr></table></figure></p>
+        <p>####<strong>原因</strong></p>
+<blockquote>
+<p>最近在写一些小的Demo案例，但是被AJAX的 json 返回乱码折磨了好久。最后通过研究StringHttpMessageConverter源代码发现，开发者很坑的使用了”ISO-8859-1”作为默认编码。经过代码测试，下面给出四种方法解决SpringMVC 返回 json 字符串中文乱码。（本文spring版本4.3.11.RELEASE）</p>
+</blockquote>
 <a id="more"></a>
-<p><img src="http://img.blog.csdn.net/20170904100613965?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="public love.gif"></p>
-<p><img src="http://img.blog.csdn.net/20170904100502316?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="静态资源图片gif"></p>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a><strong>配置文件</strong></h4><p>Spring Boot项目使用一个全局的配置文件application.properties或者是application.yml，在resources目录下或者类路径下的/config下，一般我们放到resources下。</p>
-<p>修改tomcat端口配置</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.<span class="attribute">port</span>=8888</span><br></pre></td></tr></table></figure>
-<p>修改Spring MVC拦截路径规则<br>默认Spring MVC拦截路径规则是/，如果要修改成*.html的话，可以在全局配置文件中进行如下设置：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.<span class="attribute">servlet-path</span>=*.html</span><br></pre></td></tr></table></figure>
-<p>视图解析器配置<br>一样的，Spring Boot也可以通过全局配置文件对视图解析器进行配置：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring<span class="selector-class">.mvc</span><span class="selector-class">.view</span><span class="selector-class">.prefix</span>=/WEB-INF/views/</span><br><span class="line">spring<span class="selector-class">.mvc</span><span class="selector-class">.view</span><span class="selector-class">.suffix</span>=.jsp</span><br></pre></td></tr></table></figure>
-<p>日志输出<br>Spring Boot对各种日志框架都做了支持，我们可以通过配置来修改默认的日志的配置：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#设置日志级别</span><br><span class="line">logging<span class="selector-class">.level</span><span class="selector-class">.org</span><span class="selector-class">.springframework</span>=DEBUG</span><br></pre></td></tr></table></figure>
-<p>application.yml</p>
-<p>properties与yml文件在形式上有所差别，yml文件的书写方式比较简洁，类似eclipse中package的flag呈现方式（而properties文件则像Hierarchical方式）。如上面properties文件中的属性配置使用yml文件来写：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">server:</span></span><br><span class="line"><span class="symbol">  port:</span> <span class="number">8888</span></span><br><span class="line">  context-path: /</span><br><span class="line"></span><br><span class="line"><span class="symbol">spring:</span></span><br><span class="line"><span class="symbol">    mvc:</span></span><br><span class="line"><span class="symbol">      view:</span></span><br><span class="line"><span class="symbol">        prefix:</span> /WEB-INF<span class="meta-keyword">/views/</span></span><br><span class="line"><span class="symbol">        suffix:</span> .jsp</span><br><span class="line"></span><br><span class="line"><span class="symbol">logging:</span></span><br><span class="line"><span class="symbol">  level:</span> </span><br><span class="line"><span class="symbol">    org:</span></span><br><span class="line"><span class="symbol">      springframework:</span> debug</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20170904101404072?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="配置文件"></p>
-<p><img src="http://img.blog.csdn.net/20170904101553043?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VudGVyeWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图"></p>
-<font color="red">注：推荐使用yml文件在书写，需要注意一个地方：冒号与值中间是存在空格的！</font>
-
-
-
-
-<p>Spring Boot的全局配置很强大，同时它可以配置的属性也很多，以上只列出几个常用的属性配置，如需查看完整的全局属性配置，请到<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html" target="_blank" rel="noopener">spring-boot官方配置文档</a>查看。</p>
-<h4 id="源码下载"><a href="#源码下载" class="headerlink" title="源码下载"></a><strong>源码下载</strong></h4><p><a href="https://github.com/yandongquan/SpringBootInstance/tree/master/SpringBootWeb" target="_blank" rel="noopener">SpringBoot入门之Web开发源码</a></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">StringHttpMessageConverter</span> <span class="keyword">extends</span> <span class="title">AbstractHttpMessageConverter&lt;String&gt;</span> </span>&#123;</span><br><span class="line">    public static <span class="keyword">final</span> <span class="type">Charset</span> <span class="type">DEFAULT_CHARSET</span> = <span class="type">Charset</span>.forName(<span class="string">"ISO-8859-1"</span>);</span><br><span class="line">    <span class="keyword">private</span> volatile <span class="type">List</span>&lt;<span class="type">Charset</span>&gt; availableCharsets;</span><br><span class="line">    <span class="keyword">private</span> boolean writeAcceptCharset;</span><br><span class="line">    <span class="comment">// 后面省略</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdn.net/20180403144507128?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="乱码"></p>
+<p>####<strong>方法一：自己编写一个工具类</strong></p>
+<p>学过servlet我们可以知道，可以通过HttpServletResponse设置返回编码。</p>
+<p>工具类<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ResponseTool</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">write</span>(<span class="params">HttpServletResponse response,Object o</span>)throws Exception</span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">        PrintWriter <span class="keyword">out</span>=response.getWriter();</span><br><span class="line">        <span class="keyword">out</span>.println(o.toString());</span><br><span class="line">        <span class="keyword">out</span>.flush();</span><br><span class="line">        <span class="keyword">out</span>.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>测试方法<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value = <span class="string">"/toolToJson"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> toolToJson(HttpServletResponse response) throws Exception &#123;</span><br><span class="line">    Map <span class="built_in">map</span> = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"code"</span>, <span class="string">"200"</span>);</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"msg"</span>, <span class="string">"这是一句话，测试返回json是否乱码。"</span>);</span><br><span class="line">    ResponseTool.<span class="built_in">write</span>(response,<span class="keyword">new</span> Gson().toJson(<span class="built_in">map</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://img-blog.csdn.net/20180403144547210?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="工具类"></p>
+<p>####<strong>方法二：使用produces属性</strong></p>
+<p>在RequestMapping使用（produces = “text/html; charset=utf-8”）produces 作用根据请求头中的Accept进行匹配，如请求头“Accept:text/html”时即可匹配。</p>
+<p>如果类型是：application/json ，设置为：produces = “application/json; charset=utf-8”<br>测试方法<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value = <span class="string">"/producesToJson"</span>, method = RequestMethod.GET, produces=<span class="string">"text/html;charset=UTF-8"</span>)</span><br><span class="line">@ResponseBody</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> producesToJson() &#123;</span><br><span class="line">    Map <span class="built_in">map</span> = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"code"</span>, <span class="string">"200"</span>);</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"msg"</span>, <span class="string">"这是一句话，测试返回json是否乱码。"</span>);</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">new</span> Gson().toJson(<span class="built_in">map</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://img-blog.csdn.net/20180403145012839?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="使用produces属性"></p>
+<p>####<strong>方法三：通过配置spring-mvc.xml</strong></p>
+<p>在spring-mvc.xml添加配置<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:message-converters</span> <span class="attr">register-defaults</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.http.converter.StringHttpMessageConverter"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"supportedMediaTypes"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>text/html;charset=UTF-8<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>application/json;charset=UTF-8<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>application/xml;charset=UTF-8<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:message-converters</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:annotation-driven</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>测试方法</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value = <span class="string">"/json"</span>)</span><br><span class="line">@ResponseBody</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> json() &#123;</span><br><span class="line">    Map <span class="built_in">map</span> = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"code"</span>, <span class="string">"200"</span>);</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"msg"</span>, <span class="string">"这是一句话，测试返回json是否乱码。"</span>);</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">new</span> Gson().toJson(<span class="built_in">map</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdn.net/2018040314595757?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="重写"></p>
+<p>####<strong>方法四：完成自己的AbstractHttpMessageConverter</strong></p>
+<p>分析源码可以看出StringHttpMessageConverter继承与AbstractHttpMessageConverter<string>，分析该抽象类得，相关的操作字符编码的方法可以重写，于是我们可以自定义一个类继承StringHttpMessageConverter，然后重写相关的方法。这里我们只需要把ISO-8859-1改成UTF-8，并修改构造方法。</string></p>
+<p>UTF8StringHttpMessageConverter 类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.javazhan.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.http.HttpInputMessage;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.HttpOutputMessage;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.MediaType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.converter.AbstractHttpMessageConverter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.converter.HttpMessageNotReadableException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.converter.HttpMessageNotWritableException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StreamUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</span><br><span class="line"><span class="keyword">import</span> java.nio.charset.Charset;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: yandq</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Create in 11:50 2018/4/3</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Modified</span> By:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UTF8StringHttpMessageConverter</span> <span class="keyword">extends</span> <span class="title">AbstractHttpMessageConverter</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_CHARSET = Charset.forName(<span class="string">"UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> List&lt;Charset&gt; availableCharsets;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> writeAcceptCharset;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UTF8StringHttpMessageConverter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(DEFAULT_CHARSET);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UTF8StringHttpMessageConverter</span><span class="params">(Charset defaultCharset)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(defaultCharset, <span class="keyword">new</span> MediaType[]&#123;MediaType.TEXT_PLAIN, MediaType.ALL&#125;);</span><br><span class="line">        <span class="keyword">this</span>.writeAcceptCharset = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWriteAcceptCharset</span><span class="params">(<span class="keyword">boolean</span> writeAcceptCharset)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.writeAcceptCharset = writeAcceptCharset;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(Class&lt;?&gt; clazz)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.class == clazz;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> String <span class="title">readInternal</span><span class="params">(Class&lt;? extends String&gt; clazz, HttpInputMessage inputMessage)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        Charset charset = <span class="keyword">this</span>.getContentTypeCharset(inputMessage.getHeaders().getContentType());</span><br><span class="line">        <span class="keyword">return</span> StreamUtils.copyToString(inputMessage.getBody(), charset);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Long <span class="title">getContentLength</span><span class="params">(String str, MediaType contentType)</span> </span>&#123;</span><br><span class="line">        Charset charset = <span class="keyword">this</span>.getContentTypeCharset(contentType);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">long</span>)str.getBytes(charset.name()).length;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException var5) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(var5);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">writeInternal</span><span class="params">(String str, HttpOutputMessage outputMessage)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.writeAcceptCharset) &#123;</span><br><span class="line">            outputMessage.getHeaders().setAcceptCharset(<span class="keyword">this</span>.getAcceptedCharsets());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Charset charset = <span class="keyword">this</span>.getContentTypeCharset(outputMessage.getHeaders().getContentType());</span><br><span class="line">        StreamUtils.copy(str, charset, outputMessage.getBody());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> List&lt;Charset&gt; <span class="title">getAcceptedCharsets</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.availableCharsets == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.availableCharsets = <span class="keyword">new</span> ArrayList(Charset.availableCharsets().values());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.availableCharsets;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Charset <span class="title">getContentTypeCharset</span><span class="params">(MediaType contentType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> contentType != <span class="keyword">null</span> &amp;&amp; contentType.getCharset() != <span class="keyword">null</span> ? contentType.getCharset() : <span class="keyword">this</span>.getDefaultCharset();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>定义好上面的类后，只需要将该类注册到Spring的annotaion 处理序列中即可，当加上@ResponseBody时，Spring将会调用上面自定义类中复写的方法，从而返回UTF-8的编码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mvc:message-converters</span> <span class="attr">register-defaults</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.javazhan.controller.UTF8StringHttpMessageConverter"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">mvc:message-converters</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:annotation-driven</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>测试方法</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value = <span class="string">"/json"</span>)</span><br><span class="line">@ResponseBody</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> json() &#123;</span><br><span class="line">    Map <span class="built_in">map</span> = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"code"</span>, <span class="string">"200"</span>);</span><br><span class="line">    <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"msg"</span>, <span class="string">"这是一句话，测试返回json是否乱码。"</span>);</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">new</span> Gson().toJson(<span class="built_in">map</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdn.net/2018040314595757?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="重写"></p>
 
       
     </div>
@@ -547,7 +552,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://yandongquan.github.io/2018/04/11/SpringBoot入门之Web开发.html" title="SpringBoot入门之Web开发">https://yandongquan.github.io/2018/04/11/SpringBoot入门之Web开发.html</a>
+    <a href="https://yandongquan.github.io/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html" title="SpringMVC 返回 json 字符串中文乱码">https://yandongquan.github.io/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -562,9 +567,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
-          
-            <a href="/tags/Web/" rel="tag"><i class="fa fa-tag"></i> Web</a>
+            <a href="/tags/SpringMVC/" rel="tag"><i class="fa fa-tag"></i> SpringMVC</a>
           
         </div>
       
@@ -577,8 +580,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/11/SpringBoot入门之HelloWorld.html" rel="next" title="SpringBoot入门之HelloWorld">
-                <i class="fa fa-chevron-left"></i> SpringBoot入门之HelloWorld
+              <a href="/2018/04/17/IDEA-全局搜索快捷键-Ctrl-Shift-F，不起作用啦，啥情况.html" rel="next" title="IDEA 全局搜索快捷键 Ctrl +Shift+F，不起作用啦，啥情况">
+                <i class="fa fa-chevron-left"></i> IDEA 全局搜索快捷键 Ctrl +Shift+F，不起作用啦，啥情况
               </a>
             
           </div>
@@ -586,10 +589,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/11/SpringBoot进阶之模板引擎.html" rel="prev" title="SpringBoot进阶之模板引擎">
-                SpringBoot进阶之模板引擎 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -646,17 +645,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -763,22 +753,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态资源目录"><span class="nav-number">1.</span> <span class="nav-text">静态资源目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件"><span class="nav-number">2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#源码下载"><span class="nav-number">3.</span> <span class="nav-text">源码下载</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
