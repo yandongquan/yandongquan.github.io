@@ -14,6 +14,19 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
+<link rel="stylesheet" href="dist/APlayer.min.css">
+<script src="dist/APlayer.min.js"></script>
+<div class="aplayer"
+    data-id="60198"
+    data-server="netease"
+    data-type="playlist"
+    data-mutex="true"
+    data-fixed="true">
+</div>
+<script src="dist/Meting.min.js"></script>
+
+
+
   {% set container_class = "container " %}
   {% if theme.sidebar.position %}
     {% set container_class = container_class + 'sidebar-position-' + theme.sidebar.position %}
