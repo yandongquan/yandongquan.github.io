@@ -7,7 +7,7 @@ categories:
  - 后台
 copyright: true
 ---
-####**原因**
+#### 原因
 
 >最近在写一些小的Demo案例，但是被AJAX的 json 返回乱码折磨了好久。最后通过研究StringHttpMessageConverter源代码发现，开发者很坑的使用了"ISO-8859-1"作为默认编码。经过代码测试，下面给出四种方法解决SpringMVC 返回 json 字符串中文乱码。（本文spring版本4.3.11.RELEASE）
 
@@ -22,7 +22,7 @@ public class StringHttpMessageConverter extends AbstractHttpMessageConverter<Str
 ```
 ![乱码](https://img-blog.csdn.net/20180403144507128?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-####**方法一：自己编写一个工具类**
+#### 方法一：自己编写一个工具类
 
 学过servlet我们可以知道，可以通过HttpServletResponse设置返回编码。
 
@@ -52,7 +52,7 @@ public void toolToJson(HttpServletResponse response) throws Exception {
 ![工具类](https://img-blog.csdn.net/20180403144547210?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
-####**方法二：使用produces属性**
+#### 方法二：使用produces属性
 
 在RequestMapping使用（produces = "text/html; charset=utf-8"）produces 作用根据请求头中的Accept进行匹配，如请求头“Accept:text/html”时即可匹配。
 
@@ -71,7 +71,7 @@ public String producesToJson() {
 ![使用produces属性](https://img-blog.csdn.net/20180403145012839?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
-####**方法三：通过配置spring-mvc.xml**
+#### 方法三：通过配置spring-mvc.xml
 
 
 在spring-mvc.xml添加配置
@@ -105,7 +105,7 @@ public String json() {
 ```
 ![重写](https://img-blog.csdn.net/2018040314595757?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnRlcnlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-####**方法四：完成自己的AbstractHttpMessageConverter**
+#### 方法四：完成自己的AbstractHttpMessageConverter
 
 分析源码可以看出StringHttpMessageConverter继承与AbstractHttpMessageConverter<String>，分析该抽象类得，相关的操作字符编码的方法可以重写，于是我们可以自定义一个类继承StringHttpMessageConverter，然后重写相关的方法。这里我们只需要把ISO-8859-1改成UTF-8，并修改构造方法。
 
