@@ -1,0 +1,164 @@
+.post-body h1:before, .post-body h2:before {
+    position: absolute;
+    left: -15px;
+    content: '#';
+    color: #f44336;
+    font-weight: 600;
+}
+.post-body h1,.post-body h2 {
+	font-size: 16px;
+}
+.post-body blockquote {
+	border-left: 4px solid #f44336;
+}
+
+.post-body {
+	font-family: Microsoft Yahei,"微软雅黑","Helvetica Neue",Helvetica,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+	color: #333;
+	font-size: 14px;
+}
+// 修改
+.post-body p {
+	line-height: 1.8;
+}
+
+
+// 修改选中字符的颜色
+::-webkit-scrollbar {
+	width:8px;
+	height:8px
+}
+::-webkit-scrollbar-track {
+	background-color:transparent;
+	-webkit-border-radius:2em;
+	-moz-border-radius:2em;
+	border-radius:2em
+}
+::-webkit-scrollbar-thumb {
+	min-height:25px;
+	background-color:#F90;
+	background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+	-webkit-border-radius:2em;
+	-moz-border-radius:2em;
+	border-radius:2em
+}
+::-webkit-scrollbar-corner {
+	background-color:transparent
+}
+::-moz-selection {
+	color:#fff;
+	background-color:#f44336;
+}
+::selection {
+	color:#fff;
+	background-color:#f44336;
+}
+
+// 修改按键（button）样式
+ .btn {
+    border: 0;
+    background: #eb5055;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 12px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    display: inline-block;
+    line-height: 1.5;
+    transition: .2s;
+    font-size: 1em;
+    border-radius: 3px;
+    -webkit-appearance: none;
+}
+// 按键（button）点击时样式
+.btn:hover {
+  opacity: .9;
+  background: #eb5055;
+  color: #fff;
+  border: 0;
+}
+
+ a:hover, span.exturl:hover {
+    color: #f44336;
+    border-bottom: 1px solid #f44336;
+}
+
+body {
+    font-size: 14px;
+}
+
+// 鼠标移动至文章标题时的效果
+.posts-expand .post-title-link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f44336;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+// 修改网站头部颜色
+.headband {
+    background: #f44336;
+}
+
+.posts-expand .post-body img {
+	border: 0;
+}
+
+@media (min-width: 1200px) {
+  .container .header-inner {
+    width: 700px;
+  }
+}
+@media (min-width: 1600px) {
+  .container .header-inner {
+    width: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container .main-inner {
+    width: 700px;
+  }
+}
+@media (min-width: 1600px) {
+  .container .main-inner {
+    width: 700px;
+  }
+}
+
+// 设置关闭x
+.page-post-detail .sidebar-toggle-line {
+    background: #f44336;
+}
+
+.sidebar-nav .sidebar-nav-active {
+    color: #f44336;
+    border-bottom-color: #f44336;
+}
+
+.post-toc .nav .active-current > a {
+    color: #f44336;
+    border-bottom-color: #f44336;
+}
+.sidebar-nav .sidebar-nav-active:hover {
+    color: #f44336;
+}
+.post-toc .nav .active-current > a:hover {
+    color: #f44336;
+}
+
+.header {
+    background: url(https://i.loli.net/2019/06/14/5d035a3e4f6e382211.jpg);
+}
