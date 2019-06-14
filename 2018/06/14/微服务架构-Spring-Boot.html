@@ -123,7 +123,7 @@
     root: '/',
     scheme: 'Muse',
     version: '7.1.2',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
     back2top_sidebar: false,
     fancybox: true,
@@ -147,19 +147,19 @@
 
 
 
-  <meta name="description" content="什么是SpringBootSpringBoot是Spring项目中的一个子工程，与我们所熟知的Spring-framework 同属于spring的产品。">
-<meta name="keywords" content="Spring Boot,微服务,架构">
+  <meta name="description" content="什么是SpringBootSpringBoot 是 Spring 项目中的一个子工程，与我们所熟知的 Spring-framework 同属于 spring 的产品。">
+<meta name="keywords" content="微服务,架构,Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微服务架构 - Spring Boot">
 <meta property="og:url" content="https://yandongquan.github.io/2018/06/14/微服务架构-Spring-Boot.html">
 <meta property="og:site_name" content="沉迷工作">
-<meta property="og:description" content="什么是SpringBootSpringBoot是Spring项目中的一个子工程，与我们所熟知的Spring-framework 同属于spring的产品。">
+<meta property="og:description" content="什么是SpringBootSpringBoot 是 Spring 项目中的一个子工程，与我们所熟知的 Spring-framework 同属于 spring 的产品。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on11.gif">
-<meta property="og:updated_time" content="2019-06-14T15:06:14.586Z">
+<meta property="og:updated_time" content="2019-06-14T15:50:33.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微服务架构 - Spring Boot">
-<meta name="twitter:description" content="什么是SpringBootSpringBoot是Spring项目中的一个子工程，与我们所熟知的Spring-framework 同属于spring的产品。">
+<meta name="twitter:description" content="什么是SpringBootSpringBoot 是 Spring 项目中的一个子工程，与我们所熟知的 Spring-framework 同属于 spring 的产品。">
 <meta name="twitter:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on11.gif">
 
 
@@ -431,7 +431,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan Dongquan">
-      <meta itemprop="description" content="脚踏实地  努力努力">
+      <meta itemprop="description" content="来世不可待，往世不可追也。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -523,7 +523,7 @@
       
 
       
-        <h2 id="什么是SpringBoot"><a href="#什么是SpringBoot" class="headerlink" title="什么是SpringBoot"></a>什么是SpringBoot</h2><p>SpringBoot是Spring项目中的一个子工程，与我们所熟知的Spring-framework 同属于spring的产品。<br><a id="more"></a></p>
+        <h2 id="什么是SpringBoot"><a href="#什么是SpringBoot" class="headerlink" title="什么是SpringBoot"></a>什么是SpringBoot</h2><p>SpringBoot 是 Spring 项目中的一个子工程，与我们所熟知的 Spring-framework 同属于 spring 的产品。<br><a id="more"></a></p>
 <p>我们可以看到下面的一段介绍：</p>
 <blockquote>
 <p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
@@ -532,8 +532,8 @@
 <blockquote>
 <p>用一些固定的方式来构建生产级别的spring应用。Spring Boot 推崇约定大于配置的方式以便于你能够尽可能快速的启动并运行程序。</p>
 </blockquote>
-<p>其实人们把Spring Boot 称为搭建程序的<span style="color: #CA0C16">脚手架</span>。其最主要作用就是帮我们快速的构建庞大的spring项目，并且尽可能的减少一切xml配置，做到开箱即用，迅速上手，让我们关注与业务而非配置。</p>
-<h2 id="为什么要学习SpringBoot"><a href="#为什么要学习SpringBoot" class="headerlink" title="为什么要学习SpringBoot"></a>为什么要学习SpringBoot</h2><p>java一直被人诟病的一点就是臃肿、麻烦。当我们还在辛苦的搭建项目时，可能Python程序员已经把功能写好了，究其原因注意是两点：</p>
+<p>其实人们把 Spring Boot 称为搭建程序的<span style="color: #CA0C16">脚手架</span>。其最主要作用就是帮我们快速的构建庞大的 spring 项目，并且尽可能的减少一切 xml 配置，做到开箱即用，迅速上手，让我们关注与业务而非配置。</p>
+<h2 id="为什么要学习SpringBoot"><a href="#为什么要学习SpringBoot" class="headerlink" title="为什么要学习SpringBoot"></a>为什么要学习SpringBoot</h2><p>java 一直被人诟病的一点就是臃肿、麻烦。当我们还在辛苦的搭建项目时，可能 Python 程序员已经把功能写好了，究其原因注意是两点：</p>
 <ul>
 <li>复杂的配置</li>
 </ul>
@@ -542,20 +542,19 @@
 <li>一个是混乱的依赖管理。</li>
 </ul>
 <p>项目的依赖管理也是件吃力不讨好的事情。决定项目里要用哪些库就已经够让人头痛的了，你还要知道这些库的哪个版本和其他库不会有冲突，这难题实在太棘手。并且，依赖管理也是一种损耗，添加依赖不是写应用程序代码。一旦选错了依赖的版本，随之而来的不兼容问题毫无疑问会是生产力杀手。</p>
-<p>我们可以使用SpringBoot创建java应用，并使用<code>java –jar</code>启动它，就能得到一个生产级别的web工程。</p>
+<p>我们可以使用 SpringBoot 创建 java 应用，并使用<code>java –jar</code>启动它，就能得到一个生产级别的 web 工程。</p>
 <h2 id="SpringBoot的优点"><a href="#SpringBoot的优点" class="headerlink" title="SpringBoot的优点"></a>SpringBoot的优点</h2><p>Spring Boot 主要目标是：</p>
 <ul>
 <li>为所有 Spring 的开发者提供一个非常快速的、广泛接受的入门体验。</li>
-<li>开箱即用（启动器starter-其实就是SpringBoot提供的一个jar包），但通过自己设置参数（.properties），即可快速摆脱这种方式。</li>
-<li>提供了一些大型项目中常见的非功能性特性，如内嵌服务器、安全、指标，健康检测、外部化配置等</li>
+<li>开箱即用（启动器 starter-其实就是 SpringBoot 提供的一个 jar 包），但通过自己设置参数（.properties），即可快速摆脱这种方式。</li>
+<li>提供了一些大型项目中常见的非功能性特性，如内嵌服务器、安全、指标，健康检测、外部化配置等。</li>
 <li>绝对没有代码生成，也无需 XML 配置。</li>
 </ul>
-<p>更多细节，大家可以到<span class="exturl" data-url="aHR0cDovL3Byb2plY3RzLnNwcmluZy5pby9zcHJpbmctYm9vdC8=" title="http://projects.spring.io/spring-boot/">Spring boot官网<i class="fa fa-external-link"></i></span>查看。</p>
+<p>更多细节，大家可以到<span class="exturl" data-url="aHR0cDovL3Byb2plY3RzLnNwcmluZy5pby9zcHJpbmctYm9vdC8=" title="http://projects.spring.io/spring-boot/">Spring boot 官网<i class="fa fa-external-link"></i></span>查看。</p>
 <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><p>创建 maven 名为 springboot-demo 的 Spring Boot 工程。</p>
-<h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.demo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springboot-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.demo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springboot-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="编写启动类"><a href="#编写启动类" class="headerlink" title="编写启动类"></a>编写启动类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="编写controller"><a href="#编写controller" class="headerlink" title="编写controller"></a>编写controller</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello, spring boot!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>### </p>
+<h3 id="编写-controller"><a href="#编写-controller" class="headerlink" title="编写 controller"></a>编写 controller</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello, spring boot!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="更多技能"><a href="#更多技能" class="headerlink" title="更多技能"></a>更多技能</h2><ul>
 <li>Spring boot 整合 mybatis</li>
 <li>Spring boot 整合 jpa</li>
@@ -563,7 +562,7 @@
 <li>Spring boot 整合 MQ</li>
 <li>Spring boot 整合 …</li>
 </ul>
-<p>更多细节，大家可以到<span class="exturl" data-url="aHR0cDovL3Byb2plY3RzLnNwcmluZy5pby9zcHJpbmctYm9vdC8=" title="http://projects.spring.io/spring-boot/">Spring boot官网<i class="fa fa-external-link"></i></span>查看。</p>
+<p>更多细节，大家可以到<span class="exturl" data-url="aHR0cDovL3Byb2plY3RzLnNwcmluZy5pby9zcHJpbmctYm9vdC8=" title="http://projects.spring.io/spring-boot/">Spring boot 官网<i class="fa fa-external-link"></i></span>查看。</p>
 <p><img src="/images/Come on/Come on11.gif"></p>
 
       
@@ -648,11 +647,11 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Spring-Boot/" rel="tag"><i class="fa fa-tag"></i> Spring Boot</a>
-          
             <a href="/tags/微服务/" rel="tag"><i class="fa fa-tag"></i> 微服务</a>
           
             <a href="/tags/架构/" rel="tag"><i class="fa fa-tag"></i> 架构</a>
+          
+            <a href="/tags/Spring-Boot/" rel="tag"><i class="fa fa-tag"></i> Spring Boot</a>
           
         </div>
       
@@ -665,15 +664,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/SpringMVC-返回-json-字符串中文乱码.html" rel="next" title="SpringMVC 返回 json 字符串中文乱码">
-                <i class="fa fa-chevron-left"></i> SpringMVC 返回 json 字符串中文乱码
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/15/微服务架构-Spring-Cloud.html" rel="prev" title="微服务架构 - Spring Cloud">
+                微服务架构 - Spring Cloud <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -734,7 +733,7 @@
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Yan Dongquan">
             
               <p class="site-author-name" itemprop="name">Yan Dongquan</p>
-              <div class="site-description motion-element" itemprop="description">脚踏实地  努力努力</div>
+              <div class="site-description motion-element" itemprop="description">来世不可待，往世不可追也。</div>
           </div>
 
           
@@ -744,7 +743,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -763,17 +762,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -798,23 +787,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -907,7 +880,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是SpringBoot"><span class="nav-number">1.</span> <span class="nav-text">什么是SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要学习SpringBoot"><span class="nav-number">2.</span> <span class="nav-text">为什么要学习SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot的优点"><span class="nav-number">3.</span> <span class="nav-text">SpringBoot的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">4.</span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建工程"><span class="nav-number">4.1.</span> <span class="nav-text">创建工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖"><span class="nav-number">4.2.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写启动类"><span class="nav-number">4.3.</span> <span class="nav-text">编写启动类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写controller"><span class="nav-number">4.4.</span> <span class="nav-text">编写controller</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多技能"><span class="nav-number">5.</span> <span class="nav-text">更多技能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是SpringBoot"><span class="nav-number">1.</span> <span class="nav-text">什么是SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要学习SpringBoot"><span class="nav-number">2.</span> <span class="nav-text">为什么要学习SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot的优点"><span class="nav-number">3.</span> <span class="nav-text">SpringBoot的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">4.</span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建工程"><span class="nav-number">4.1.</span> <span class="nav-text">创建工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖"><span class="nav-number">4.2.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写启动类"><span class="nav-number">4.3.</span> <span class="nav-text">编写启动类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写-controller"><span class="nav-number">4.4.</span> <span class="nav-text">编写 controller</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多技能"><span class="nav-number">5.</span> <span class="nav-text">更多技能</span></a></li></ol></div>
             
 
           </div>
@@ -946,7 +919,7 @@
 
 
 
-  <div class="footer-custom">泉涸，鱼相与处于陆，相呴以湿，相濡以沫，不如相忘于江湖。 <a href="https://yandongquan.github.io" class="theme-link" rel="noopener" target="_blank">yandongquan</a></div>
+  <div class="footer-custom">泉涸，鱼相与处于陆，相呴以湿，相濡以沫，不如相忘于江湖。 <a href="https://yandongquan.github.io" class="theme-link" rel="noopener" target="_blank">庄子</a></div>
 
 
         

@@ -1858,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffc404;
+  background: #c8e8ff;
 }
 .feed-link,
 .chat {
@@ -2600,6 +2600,12 @@ body {
 }
 .header {
   background: url("https://i.loli.net/2019/06/14/5d035a3e4f6e382211.jpg");
+}
+h3,
+h4,
+h5,
+h6 {
+  font-size: 15px;
 }
 @media (max-width: 767px) {
   .header-inner,
