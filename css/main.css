@@ -1858,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #426a05;
+  background: #ffc404;
 }
 .feed-link,
 .chat {
@@ -2593,6 +2593,10 @@ body {
 }
 .post-toc .nav .active-current > a:hover {
   color: #f44336;
+}
+.post-toc .nav .active > a {
+  color: #f44336;
+  border-bottom-color: #f44336;
 }
 .header {
   background: url("https://i.loli.net/2019/06/14/5d035a3e4f6e382211.jpg");
