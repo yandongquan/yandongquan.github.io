@@ -1,0 +1,10 @@
+.header {
+  background: url("https://i.loli.net/2019/06/14/5d035a3e4f6e382211.jpg");
+}
+.site-subtitle {
+  color: #fff;
+}
+.custom-logo-site-title a:hover,
+span.exturl:hover {
+  border: 0;
+}
