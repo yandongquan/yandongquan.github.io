@@ -83,7 +83,7 @@ footer:
     icp:
 
   # Any custom text can be defined here.
-  custom_text: 泉涸，鱼相与处于陆，相呴以湿，相濡以沫，不如相忘于江湖。 <a href="https://yandongquan.github.io" class="theme-link" rel="noopener" target="_blank">yandongquan</a>
+  custom_text: 泉涸，鱼相与处于陆，相呴以湿，相濡以沫，不如相忘于江湖。 <a href="https://yandongquan.github.io" class="theme-link" rel="noopener" target="_blank">庄子</a>
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -255,7 +255,7 @@ sidebar:
   #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: hide
+  display: post
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
