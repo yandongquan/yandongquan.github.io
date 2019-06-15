@@ -155,10 +155,12 @@
 <meta property="og:site_name" content="沉迷工作">
 <meta property="og:description" content="什么是 NoSqlNoSQL，即 Not-Only SQL，泛指非关系型的数据库。它是为了解决高并发、高可用、高可扩展、大数据存储问题而产生的数据库解决方案。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T16:37:12.046Z">
+<meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on4.gif">
+<meta property="og:updated_time" content="2019-06-15T16:44:50.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式系统 - 内存数据库Redis">
 <meta name="twitter:description" content="什么是 NoSqlNoSQL，即 Not-Only SQL，泛指非关系型的数据库。它是为了解决高并发、高可用、高可扩展、大数据存储问题而产生的数据库解决方案。">
+<meta name="twitter:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on4.gif">
 
 
 
@@ -522,7 +524,11 @@
 
       
         <h2 id="什么是-NoSql"><a href="#什么是-NoSql" class="headerlink" title="什么是 NoSql"></a>什么是 NoSql</h2><p>NoSQL，即 Not-Only SQL，泛指非关系型的数据库。它是为了解决<span style="color: #f44336">高并发、高可用、高可扩展、大数据存储问题</span>而产生的数据库解决方案。<br><a id="more"></a><br>NoSQL 可以作为关系型数据库的良好补充，但是不能替代关系型数据库。</p>
-<h2 id="Redis-是什么"><a href="#Redis-是什么" class="headerlink" title="Redis 是什么"></a>Redis 是什么</h2><p>Redis 是用 C 语言开发的一个开源的高性能键值对（key-value）数据库。它通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下：</p>
+<h2 id="NoSql-数据库分类"><a href="#NoSql-数据库分类" class="headerlink" title="NoSql 数据库分类"></a>NoSql 数据库分类</h2><p><strong>键值(Key-Value)存储数据库</strong><br>相关产品： Tokyo Cabinet/Tyrant、<span style="color: #f44336">Redis</span>、Voldemort、Berkeley DB<br>典型应用： 内容缓存，主要用于处理大量数据的高访问负载。<br>数据模型： 一系列键值对<br>优势： 快速查询<br>劣势： 存储的数据缺少结构化</p>
+<p><strong>列存储数据库</strong><br>相关产品：Cassandra, <span style="color: #f44336">HBase</span>, Riak<br>典型应用：分布式的文件系统<br>数据模型：以列簇式存储，将同一列数据存在一起<br>优势：查找速度快，可扩展性强，更容易进行分布式扩展<br>劣势：功能相对局限</p>
+<p><strong>文档型数据库</strong><br>相关产品：CouchDB、<span style="color: #f44336">MongoDB</span><br>典型应用：Web 应用（与 Key-Value 类似，Value 是结构化的）<br>数据模型： 一系列键值对<br>优势：数据结构要求不严格<br>劣势：查询性能不高，而且缺乏统一的查询语法</p>
+<p><strong>图形(Graph)数据库</strong><br>相关数据库：Neo4J、InfoGrid、Infinite Graph<br>典型应用：社交网络<br>数据模型：图结构<br>优势：利用图结构相关算法。<br>劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。</p>
+<h2 id="Redis-是什么"><a href="#Redis-是什么" class="headerlink" title="Redis 是什么"></a>Redis 是什么</h2><p>Redis 是用 C 语言开发的一个开源的高性能键值对（key-value）数据库。它通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止 Redis 支持的键值数据类型如下：</p>
 <ul>
 <li>字符串类型</li>
 <li>散列类型</li>
@@ -532,13 +538,15 @@
 </ul>
 <h2 id="Redis-的应用场景"><a href="#Redis-的应用场景" class="headerlink" title="Redis 的应用场景"></a>Redis 的应用场景</h2><ul>
 <li><span style="color: #f44336">缓存（数据查询、短连接、新闻内容、商品内容等等）。</span></li>
-<li>分布式集群架构中的session分离。</li>
+<li>分布式集群架构中的 session 分离。</li>
 <li>聊天室的在线好友列表。</li>
-<li>任务队列。（秒杀、抢购、12306等等）</li>
+<li>任务队列。（秒杀、抢购、12306 等等）</li>
 <li>应用排行榜。</li>
 <li>网站访问统计。</li>
 <li>数据过期处理（可以精确到毫秒）</li>
 </ul>
+<p><span style="color: #f44336">持续更新中…</span></p>
+<p><img src="/images/Come on/Come on4.gif"></p>
 
       
     </div>
@@ -873,7 +881,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-NoSql"><span class="nav-number">1.</span> <span class="nav-text">什么是 NoSql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-是什么"><span class="nav-number">2.</span> <span class="nav-text">Redis 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-的应用场景"><span class="nav-number">3.</span> <span class="nav-text">Redis 的应用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-NoSql"><span class="nav-number">1.</span> <span class="nav-text">什么是 NoSql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSql-数据库分类"><span class="nav-number">2.</span> <span class="nav-text">NoSql 数据库分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-是什么"><span class="nav-number">3.</span> <span class="nav-text">Redis 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-的应用场景"><span class="nav-number">4.</span> <span class="nav-text">Redis 的应用场景</span></a></li></ol></div>
             
 
           </div>

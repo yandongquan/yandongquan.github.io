@@ -22,14 +22,14 @@
       </categories>
       <tags>
         <tag>架构</tag>
-        <tag>微服务</tag>
         <tag>Spring Boot</tag>
+        <tag>微服务</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[分布式系统 - 内存数据库Redis]]></title>
     <url>%2F2018%2F05%2F16%2F%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F-%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93Redis.html</url>
-    <content type="text"><![CDATA[什么是 NoSqlNoSQL，即 Not-Only SQL，泛指非关系型的数据库。它是为了解决高并发、高可用、高可扩展、大数据存储问题而产生的数据库解决方案。NoSQL 可以作为关系型数据库的良好补充，但是不能替代关系型数据库。 Redis 是什么Redis 是用 C 语言开发的一个开源的高性能键值对（key-value）数据库。它通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下： 字符串类型 散列类型 列表类型 集合类型 有序集合类型 Redis 的应用场景 缓存（数据查询、短连接、新闻内容、商品内容等等）。 分布式集群架构中的session分离。 聊天室的在线好友列表。 任务队列。（秒杀、抢购、12306等等） 应用排行榜。 网站访问统计。 数据过期处理（可以精确到毫秒）]]></content>
+    <content type="text"><![CDATA[什么是 NoSqlNoSQL，即 Not-Only SQL，泛指非关系型的数据库。它是为了解决高并发、高可用、高可扩展、大数据存储问题而产生的数据库解决方案。NoSQL 可以作为关系型数据库的良好补充，但是不能替代关系型数据库。 NoSql 数据库分类键值(Key-Value)存储数据库相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB典型应用： 内容缓存，主要用于处理大量数据的高访问负载。数据模型： 一系列键值对优势： 快速查询劣势： 存储的数据缺少结构化 列存储数据库相关产品：Cassandra, HBase, Riak典型应用：分布式的文件系统数据模型：以列簇式存储，将同一列数据存在一起优势：查找速度快，可扩展性强，更容易进行分布式扩展劣势：功能相对局限 文档型数据库相关产品：CouchDB、MongoDB典型应用：Web 应用（与 Key-Value 类似，Value 是结构化的）数据模型： 一系列键值对优势：数据结构要求不严格劣势：查询性能不高，而且缺乏统一的查询语法 图形(Graph)数据库相关数据库：Neo4J、InfoGrid、Infinite Graph典型应用：社交网络数据模型：图结构优势：利用图结构相关算法。劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。 Redis 是什么Redis 是用 C 语言开发的一个开源的高性能键值对（key-value）数据库。它通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止 Redis 支持的键值数据类型如下： 字符串类型 散列类型 列表类型 集合类型 有序集合类型 Redis 的应用场景 缓存（数据查询、短连接、新闻内容、商品内容等等）。 分布式集群架构中的 session 分离。 聊天室的在线好友列表。 任务队列。（秒杀、抢购、12306 等等） 应用排行榜。 网站访问统计。 数据过期处理（可以精确到毫秒） 持续更新中…]]></content>
       <categories>
         <category>分布式</category>
       </categories>
