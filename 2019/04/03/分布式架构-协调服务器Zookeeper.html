@@ -155,12 +155,13 @@
 <meta property="og:site_name" content="沉迷工作">
 <meta property="og:description" content="什么是 ZookeeperZookeeper 是一个分布式开源框架，提供了协调分布式应用的基本服务，它向外部应用暴露一组通用服务——分布式同步（Distributed Synchronization）、命名服务（Naming Service）、集群维护（Group Maintenance）等，简化分布式应用协调及其管理的难度，提供高性能的分布式服务。ZooKeeper本身可以以单机模式安装运行，不">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/06/20/5d0b564d4e9c551110.png">
 <meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on6.gif">
-<meta property="og:updated_time" content="2019-06-20T08:57:28.262Z">
+<meta property="og:updated_time" content="2019-06-20T09:50:03.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式架构 - 协调服务器 Zookeeper">
 <meta name="twitter:description" content="什么是 ZookeeperZookeeper 是一个分布式开源框架，提供了协调分布式应用的基本服务，它向外部应用暴露一组通用服务——分布式同步（Distributed Synchronization）、命名服务（Naming Service）、集群维护（Group Maintenance）等，简化分布式应用协调及其管理的难度，提供高性能的分布式服务。ZooKeeper本身可以以单机模式安装运行，不">
-<meta name="twitter:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on6.gif">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/20/5d0b564d4e9c551110.png">
 
 
 
@@ -540,13 +541,23 @@
 <li>数据更新原子性，一次数据更新要么成功，要么失败</li>
 <li>实时性，在一定时间范围内，client 能读到最新数据</li>
 </ul>
-<h2 id="Zookeeper-数据结构"><a href="#Zookeeper-数据结构" class="headerlink" title="Zookeeper 数据结构"></a>Zookeeper 数据结构</h2><h2 id="Zookeeper-应用场景"><a href="#Zookeeper-应用场景" class="headerlink" title="Zookeeper 应用场景"></a>Zookeeper 应用场景</h2><p>数据发布与订阅（配置中心）<br>发布与订阅模型，即所谓的配置中心，顾名思义就是发布者将数据发布到ZK节点上，供订阅者动态获取数据，实现配置信息的集中式管理和动态更新。例如全局的配置信息，服务式服务框架的服务地址列表等就非常适合使用。</p>
-<p>负载均衡<br>这里说的负载均衡是指软负载均衡。在分布式环境中，为了保证高可用性，通常同一个应用或同一个服务的提供方都会部署多份，达到对等服务。而消费者就须要在这些对等的服务器中选择一个来执行相关的业务逻辑，其中比较典型的是消息中间件中的生产者，消费者负载均衡。</p>
-<p>命名服务(Naming Service)</p>
-<p>分布式通知/协调</p>
-<p>集群管理与Master选举</p>
-<p>分布式锁</p>
-<p>分布式事务</p>
+<h2 id="Zookeeper-数据结构"><a href="#Zookeeper-数据结构" class="headerlink" title="Zookeeper 数据结构"></a>Zookeeper 数据结构</h2><p>ZooKeeper 提供的名称空间非常类似于标准文件系统。名称是由斜线（/）分隔的一系列路径元素。ZooKeeper 名称空间中的每个节点都由一个路径标识。</p>
+<p><img src="https://i.loli.net/2019/06/20/5d0b564d4e9c551110.png" alt="Zookeeper 数据结构"></p>
+<p>树是由节点所组成，zookeeper 的数据存储也同样是基于节点，这个节点叫做 Znode.但是，不同于树的节点，Znode 的引用方式是路径引用，类似于文件路径：<code>/app1/p_1</code>。</p>
+<p>这样的层级结构，让每一个Znode节点拥有唯一的路径，就像命名空间一样对不同信息作出清晰的隔离。</p>
+<h2 id="ZooKeeper-中节点和临时节点"><a href="#ZooKeeper-中节点和临时节点" class="headerlink" title="ZooKeeper 中节点和临时节点"></a>ZooKeeper 中节点和临时节点</h2><p>ZooKeeper 的节点是通过像树一样的结构来进行维护的，并且每一个节点通过路径来标示以及访问。除此之外，每一个节点还拥有自身的一些信息，包括：数据、数据长度、创建时间、修改时间等等。从这样一类既含有数据，又作为路径表标示的节点的特点中，可以看出，ZooKeeper 的节点既可以被看做是一个文件，又可以被看做是一个目录，它同时具有二者的特点。</p>
+<p>具体地说，Znode 维护着数据、ACL（access control list，访问控制列表）、时间戳等交换版本号等数据结构，它通过对这些数据的管理来让缓存生效并且令协调更新。每当 Znode 中的数据更新后它所维护的版本号将增加，这非常类似于数据库中计数器时间戳的操作方式。</p>
+<p>另外 Znode 还具有原子性操作的特点：命名空间中，每一个 Znode 的数据将被原子地读写。读操作将读取与 Znode 相关的所有数据，写操作将替换掉所有的数据。除此之外，每一个节点都有一个访问控制列表，这个访问控制列表规定了用户操作的权限。</p>
+<p>ZooKeeper 中同样存在临时节点。这些节点与 session 同时存在，当 session 生命周期结束，这些临时节点也将被删除。临时节点在某些场合也发挥着非常重要的作用。</p>
+<h2 id="Zookeeper-应用场景"><a href="#Zookeeper-应用场景" class="headerlink" title="Zookeeper 应用场景"></a>Zookeeper 应用场景</h2><ul>
+<li>数据发布与订阅（配置中心）</li>
+<li>负载均衡</li>
+<li>命名服务（Naming Service）</li>
+<li>分布式通知/协调</li>
+<li>集群管理与 Master 选举</li>
+<li>分布式锁</li>
+<li>分布式事务</li>
+</ul>
 <p><span style="color:#CA0C16">持续更新中…</span><br><img src="/images/Come on/Come on6.gif"></p>
 
       
@@ -894,7 +905,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Zookeeper"><span class="nav-number">1.</span> <span class="nav-text">什么是 Zookeeper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-集群机制"><span class="nav-number">2.</span> <span class="nav-text">Zookeeper 集群机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-特性"><span class="nav-number">3.</span> <span class="nav-text">Zookeeper 特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-数据结构"><span class="nav-number">4.</span> <span class="nav-text">Zookeeper 数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-应用场景"><span class="nav-number">5.</span> <span class="nav-text">Zookeeper 应用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Zookeeper"><span class="nav-number">1.</span> <span class="nav-text">什么是 Zookeeper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-集群机制"><span class="nav-number">2.</span> <span class="nav-text">Zookeeper 集群机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-特性"><span class="nav-number">3.</span> <span class="nav-text">Zookeeper 特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-数据结构"><span class="nav-number">4.</span> <span class="nav-text">Zookeeper 数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZooKeeper-中节点和临时节点"><span class="nav-number">5.</span> <span class="nav-text">ZooKeeper 中节点和临时节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-应用场景"><span class="nav-number">6.</span> <span class="nav-text">Zookeeper 应用场景</span></a></li></ol></div>
             
 
           </div>
