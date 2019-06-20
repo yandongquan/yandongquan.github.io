@@ -147,20 +147,21 @@
 
 
 
-  <meta name="description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect)  引用是通过$ref来表示的     引用 描述     “$ref”:”..">
+  <meta name="description" content="Set 无序不重复可用于比较对象Set 里的元素无放入顺序，元素不可重复。">
 <meta name="keywords" content="JavaWeb,开发经验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb 开发经验 01">
 <meta property="og:url" content="https://yandongquan.github.io/2019/04/20/JavaWeb-开发经验-01.html">
 <meta property="og:site_name" content="沉迷工作">
-<meta property="og:description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect)  引用是通过$ref来表示的     引用 描述     “$ref”:”..">
+<meta property="og:description" content="Set 无序不重复可用于比较对象Set 里的元素无放入顺序，元素不可重复。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/06/20/5d0b450872aa152027.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/20/5d0b4508dad9c11853.png">
-<meta property="og:updated_time" content="2019-06-20T08:53:54.075Z">
+<meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on7.gif">
+<meta property="og:updated_time" content="2019-06-20T08:57:41.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb 开发经验 01">
-<meta name="twitter:description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect)  引用是通过$ref来表示的     引用 描述     “$ref”:”..">
+<meta name="twitter:description" content="Set 无序不重复可用于比较对象Set 里的元素无放入顺序，元素不可重复。">
 <meta name="twitter:image" content="https://i.loli.net/2019/06/20/5d0b450872aa152027.png">
 
 
@@ -524,39 +525,9 @@
       
 
       
-        <h2 id="java-对象转成-JSON-字符串，出现-ref"><a href="#java-对象转成-JSON-字符串，出现-ref" class="headerlink" title="java 对象转成 JSON 字符串，出现  $ref"></a>java 对象转成 JSON 字符串，出现  $ref</h2><p>原因：List 里含有重复对象<br>使用：DisableCircularReferenceDetect 来禁止循环引用检测</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">JSON</span><span class="selector-class">.toJSONString</span>(<span class="selector-tag">list</span>, <span class="selector-tag">SerializerFeature</span><span class="selector-class">.DisableCircularReferenceDetect</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>引用是通过<code>$ref</code>来表示的</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>引用</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>“$ref”:”..”</td>
-<td>上一级</td>
-</tr>
-<tr>
-<td>“$ref”:”@”</td>
-<td>当前对象，也就是自引用</td>
-</tr>
-<tr>
-<td>“$ref”:”$”</td>
-<td>根对象</td>
-</tr>
-<tr>
-<td>“$ref”:”$.children.0”</td>
-<td>基于路径的引用，相当于 root.getChildren().get(0)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="freemarker-判断对象是否为空"><a href="#freemarker-判断对象是否为空" class="headerlink" title="freemarker 判断对象是否为空"></a>freemarker 判断对象是否为空</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#<span class="meta-keyword">if</span> name??&gt;</span></span><br><span class="line">$&#123;<span class="built_in">name</span> &#125;</span><br><span class="line">&lt;/<span class="meta">#<span class="meta-keyword">if</span>&gt;</span></span><br><span class="line"></span><br><span class="line">$&#123;<span class="built_in">name</span>!<span class="string">''</span> &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Set-无序不重复可用于比较对象"><a href="#Set-无序不重复可用于比较对象" class="headerlink" title="Set 无序不重复可用于比较对象"></a>Set 无序不重复可用于比较对象</h2><p>Set 里的元素无放入顺序，元素不可重复。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Person person1 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">20</span>);</span><br><span class="line">Person person2 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">20</span>);</span><br><span class="line">Set&lt;Person&gt; hasSet = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">hasSet.<span class="built_in">add</span>(person1);</span><br><span class="line">hasSet.<span class="built_in">add</span>(person2);</span><br><span class="line">System.out.<span class="built_in">println</span>(hasSet.<span class="built_in">size</span>());</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Set-无序不重复可用于比较对象"><a href="#Set-无序不重复可用于比较对象" class="headerlink" title="Set 无序不重复可用于比较对象"></a>Set 无序不重复可用于比较对象</h2><p>Set 里的元素无放入顺序，元素不可重复。</p>
+<a id="more"></a>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Person person1 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">20</span>);</span><br><span class="line">Person person2 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">20</span>);</span><br><span class="line">Set&lt;Person&gt; hasSet = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">hasSet.<span class="built_in">add</span>(person1);</span><br><span class="line">hasSet.<span class="built_in">add</span>(person2);</span><br><span class="line">System.out.<span class="built_in">println</span>(hasSet.<span class="built_in">size</span>());</span><br></pre></td></tr></table></figure>
 <h2 id="字符串转-List-lt-Class-gt"><a href="#字符串转-List-lt-Class-gt" class="headerlink" title="字符串转 List&lt;Class&gt;"></a>字符串转 <code>List&lt;Class&gt;</code></h2><p>使用的是 <code>JSONArray.parseArray</code> 而不是 <code>JSONArray.parseObject</code></p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;Mobile&gt; mobiles = (<span class="built_in">List</span>&lt;Mobile&gt;) JSONArray.parseArray(str, Mobile.<span class="keyword">class</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="关于ajaxupload-js上传图片问题"><a href="#关于ajaxupload-js上传图片问题" class="headerlink" title="关于ajaxupload.js上传图片问题"></a>关于<code>ajaxupload.js</code>上传图片问题</h2><p>谷歌浏览器慎用有道词典，有道词典会导致body里面多一个元素<br><code>&lt;audio controls=&quot;controls&quot; style=&quot;display: none;&quot;&gt;&lt;/audio&gt;</code></p>
@@ -606,6 +577,7 @@
 <p><img src="https://i.loli.net/2019/06/20/5d0b450872aa152027.png" alt="idea里面配置static/image/upload文件资源"></p>
 <p>2）idea中tomcat发布项目的默认路径是项目所在地里的target目录里面，修改工程输出到Tomcat下</p>
 <p><img src="https://i.loli.net/2019/06/20/5d0b4508dad9c11853.png" alt="修改工程输出到Tomcat下"></p>
+<p><img src="/images/Come on/Come on7.gif"></p>
 
       
     </div>
@@ -714,6 +686,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/04/26/JavaWeb-开发经验-02.html" rel="prev" title="JavaWeb 开发经验 02">
+                JavaWeb 开发经验 02 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -783,7 +759,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -944,7 +920,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-对象转成-JSON-字符串，出现-ref"><span class="nav-number">1.</span> <span class="nav-text">java 对象转成 JSON 字符串，出现  $ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#freemarker-判断对象是否为空"><span class="nav-number">2.</span> <span class="nav-text">freemarker 判断对象是否为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-无序不重复可用于比较对象"><span class="nav-number">3.</span> <span class="nav-text">Set 无序不重复可用于比较对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串转-List-lt-Class-gt"><span class="nav-number">4.</span> <span class="nav-text">字符串转 List&lt;Class&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于ajaxupload-js上传图片问题"><span class="nav-number">5.</span> <span class="nav-text">关于ajaxupload.js上传图片问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Json字符串有转义字符"><span class="nav-number">6.</span> <span class="nav-text">Json字符串有转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#携程-Apollo-配置中心本地启动"><span class="nav-number">7.</span> <span class="nav-text">携程 Apollo 配置中心本地启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断线程池执行完，再执行下一步"><span class="nav-number">8.</span> <span class="nav-text">判断线程池执行完，再执行下一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ibatis-查询日期会去掉时分秒"><span class="nav-number">9.</span> <span class="nav-text">ibatis 查询日期会去掉时分秒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMvc-表单提交时-date-类型"><span class="nav-number">10.</span> <span class="nav-text">SpringMvc 表单提交时 date 类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea-工程上传的图片，页面显示不出来"><span class="nav-number">11.</span> <span class="nav-text">idea 工程上传的图片，页面显示不出来</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-无序不重复可用于比较对象"><span class="nav-number">1.</span> <span class="nav-text">Set 无序不重复可用于比较对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串转-List-lt-Class-gt"><span class="nav-number">2.</span> <span class="nav-text">字符串转 List&lt;Class&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于ajaxupload-js上传图片问题"><span class="nav-number">3.</span> <span class="nav-text">关于ajaxupload.js上传图片问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Json字符串有转义字符"><span class="nav-number">4.</span> <span class="nav-text">Json字符串有转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#携程-Apollo-配置中心本地启动"><span class="nav-number">5.</span> <span class="nav-text">携程 Apollo 配置中心本地启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断线程池执行完，再执行下一步"><span class="nav-number">6.</span> <span class="nav-text">判断线程池执行完，再执行下一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ibatis-查询日期会去掉时分秒"><span class="nav-number">7.</span> <span class="nav-text">ibatis 查询日期会去掉时分秒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMvc-表单提交时-date-类型"><span class="nav-number">8.</span> <span class="nav-text">SpringMvc 表单提交时 date 类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea-工程上传的图片，页面显示不出来"><span class="nav-number">9.</span> <span class="nav-text">idea 工程上传的图片，页面显示不出来</span></a></li></ol></div>
             
 
           </div>
