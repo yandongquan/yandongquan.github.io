@@ -147,20 +147,21 @@
 
 
 
-  <meta name="description" content="什么是 NginxNginx 是俄罗斯人编写的一款高性能的 HTTP 和反向代理服务器。 在高连接并发的情况下，它能够支持高达 50000 个并发连接数的响应，但是内存、CPU 等系统资源消耗却很低，运行很稳定。">
-<meta name="keywords" content="分布式,架构,Nginx">
+  <meta name="description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect)  引用是通过$ref来表示的     引用 描述     “$ref”:”..">
+<meta name="keywords" content="JavaWeb,开发经验">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分布式架构 - Nginx">
-<meta property="og:url" content="https://yandongquan.github.io/2018/04/15/分布式架构-Nginx.html">
+<meta property="og:title" content="JavaWeb 开发经验 01">
+<meta property="og:url" content="https://yandongquan.github.io/2019/04/20/JavaWeb-开发经验-01.html">
 <meta property="og:site_name" content="沉迷工作">
-<meta property="og:description" content="什么是 NginxNginx 是俄罗斯人编写的一款高性能的 HTTP 和反向代理服务器。 在高连接并发的情况下，它能够支持高达 50000 个并发连接数的响应，但是内存、CPU 等系统资源消耗却很低，运行很稳定。">
+<meta property="og:description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect)  引用是通过$ref来表示的     引用 描述     “$ref”:”..">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on3.gif">
-<meta property="og:updated_time" content="2019-06-15T10:10:52.770Z">
+<meta property="og:image" content="https://i.loli.net/2019/06/20/5d0b450872aa152027.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/20/5d0b4508dad9c11853.png">
+<meta property="og:updated_time" content="2019-06-20T08:53:54.075Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分布式架构 - Nginx">
-<meta name="twitter:description" content="什么是 NginxNginx 是俄罗斯人编写的一款高性能的 HTTP 和反向代理服务器。 在高连接并发的情况下，它能够支持高达 50000 个并发连接数的响应，但是内存、CPU 等系统资源消耗却很低，运行很稳定。">
-<meta name="twitter:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on3.gif">
+<meta name="twitter:title" content="JavaWeb 开发经验 01">
+<meta name="twitter:description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect)  引用是通过$ref来表示的     引用 描述     “$ref”:”..">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/20/5d0b450872aa152027.png">
 
 
 
@@ -168,7 +169,7 @@
 
   
   
-  <link rel="canonical" href="https://yandongquan.github.io/2018/04/15/分布式架构-Nginx">
+  <link rel="canonical" href="https://yandongquan.github.io/2019/04/20/JavaWeb-开发经验-01">
 
 
 
@@ -178,7 +179,7 @@
   };
 </script>
 
-  <title>分布式架构 - Nginx | 沉迷工作</title>
+  <title>JavaWeb 开发经验 01 | 沉迷工作</title>
   
 
 
@@ -427,7 +428,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yandongquan.github.io/2018/04/15/分布式架构-Nginx.html">
+    <link itemprop="mainEntityOfPage" href="https://yandongquan.github.io/2019/04/20/JavaWeb-开发经验-01.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan Dongquan">
@@ -444,7 +445,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">分布式架构 - Nginx
+          <h1 class="post-title" itemprop="name headline">JavaWeb 开发经验 01
 
               
             
@@ -470,7 +471,7 @@
                 
               
 
-              <time title="创建时间：2018-04-15 07:46:13" itemprop="dateCreated datePublished" datetime="2018-04-15T07:46:13+08:00">2018-04-15</time>
+              <time title="创建时间：2019-04-20 16:31:33" itemprop="dateCreated datePublished" datetime="2019-04-20T16:31:33+08:00">2019-04-20</time>
             
 
             
@@ -488,7 +489,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/分布式/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发经验/" itemprop="url" rel="index"><span itemprop="name">开发经验</span></a></span>
 
                 
                 
@@ -523,102 +524,88 @@
       
 
       
-        <h2 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h2><p>Nginx 是俄罗斯人编写的一款<span style="color: #f44336">高性能的 HTTP 和反向代理服务器</span>。</p>
-<p>在高连接并发的情况下，它能够支持高达 <span style="color: #f44336">50000 个并发</span>连接数的响应，但是内存、CPU 等系统资源消耗却很低，运行很稳定。</p>
-<a id="more"></a>
-<h2 id="Nginx-的优势"><a href="#Nginx-的优势" class="headerlink" title="Nginx 的优势"></a>Nginx 的优势</h2><p>选择 Nginx 的理由也很简单：</p>
-<ul>
-<li>第一，它可以支持5W高并发连接；</li>
-<li>第二，内存消耗少；</li>
-<li>第三，成本低，如果采用 F5、NetScaler 等硬件负载均衡设备的话，需要大几十万。而 Nginx 是开源的，可以免费使用并且能用于商业用途。</li>
-</ul>
-<h2 id="分布式架构中的作用"><a href="#分布式架构中的作用" class="headerlink" title="分布式架构中的作用"></a>分布式架构中的作用</h2><p>最常用的有三项：</p>
-<ul>
-<li><strong>路由功能</strong>（与微服务对应）：域名/路径，进行路由选择后台服务器；</li>
-<li><strong>负载功能</strong>（与高并发高可用对应）：对后台服务器集群进行负载；</li>
-<li><strong>静态服务器</strong>（比 Tomcat 性能高很多）：在 mvvm 模式中，充当文件读取职责。</li>
-</ul>
+        <h2 id="java-对象转成-JSON-字符串，出现-ref"><a href="#java-对象转成-JSON-字符串，出现-ref" class="headerlink" title="java 对象转成 JSON 字符串，出现  $ref"></a>java 对象转成 JSON 字符串，出现  $ref</h2><p>原因：List 里含有重复对象<br>使用：DisableCircularReferenceDetect 来禁止循环引用检测</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">JSON</span><span class="selector-class">.toJSONString</span>(<span class="selector-tag">list</span>, <span class="selector-tag">SerializerFeature</span><span class="selector-class">.DisableCircularReferenceDetect</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>总结：实际使用中，这三项功用，会混合使用。比如先分离动静，再路由服务，再负载机器。</p>
+<p>引用是通过<code>$ref</code>来表示的</p>
 </blockquote>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p><strong>正向代理</strong>：客户端自己请求出现困难。客户请了一个代理，来代自己做事，就叫代理。比如代理律师，代购，政府机关办事的代理人等等。<br><strong>反向代理</strong>：服务端推出的一个代理招牌。</p>
-<h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><h3 id="源码编译方式"><a href="#源码编译方式" class="headerlink" title="源码编译方式"></a>源码编译方式</h3><p>一般系统中已经装了了 make 和 g++，无须再装。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装 make</span></span><br><span class="line">yum -y install autoconf automake make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装 g++</span></span><br><span class="line">yum -y install gcc gcc-c++</span><br></pre></td></tr></table></figure></p>
-<p>安装nginx依赖的库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装 pcre </span></span><br><span class="line">yum -y install pcre pcre-devel</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装 zlib </span></span><br><span class="line">yum -y install zlib zlib-devel</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装 openssl </span></span><br><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure></p>
-<p><span class="exturl" data-url="aHR0cDovL25naW54Lm9yZy9lbi9kb3dubG9hZC5odG1s" title="http://nginx.org/en/download.html">Nginx 官方下载地址<i class="fa fa-external-link"></i></span></p>
-<p>安装 Nginx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 下载 Nginx</span><br><span class="line">wget  http://nginx.org/download/nginx-1.16.0.tar.gz</span><br><span class="line"># 解压 Nginx</span><br><span class="line">tar -zxvf nginx-1.16.0.tar.gz</span><br><span class="line">cd nginx-1.16.0</span><br><span class="line"># 安装 HTTPS 模块</span><br><span class="line">./configure   --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line"># 安装</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<p><code>--prefix</code> 指定安装目录<br><code>--with-http_ssl_module</code> 安装 HTTPS 模块<br><code>make</code> 编译<br><code>make install</code> 安装</p>
-<h3 id="yum-方式"><a href="#yum-方式" class="headerlink" title="yum 方式"></a>yum 方式</h3><p>Linux 系统下：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum扩展源</span></span><br><span class="line">yum <span class="keyword">install</span> epel-release -y</span><br><span class="line">yum <span class="keyword">install</span> nginx -y</span><br></pre></td></tr></table></figure></p>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><ul>
-<li>Conf：配置文件</li>
-<li>Html：网页文件</li>
-<li>Logs：日志文件</li>
-<li>Sbin：二进制程序</li>
-</ul>
-<h3 id="启停命令"><a href="#启停命令" class="headerlink" title="启停命令"></a>启停命令</h3><p><code>./nginx -c nginx.conf</code>的文件。如果不指定，默认为 NGINX_HOME/conf/nginx.conf<br><code>./nginx -s stop</code>  停止<br><code>./nginx -s quit</code> 退出<br><code>./nginx -s reload</code> 重新加载 nginx.conf</p>
-<h3 id="发送信号的方式"><a href="#发送信号的方式" class="headerlink" title="发送信号的方式"></a>发送信号的方式</h3><p><code>kill -QUIT 进程号</code> 安全停止<br><code>kill -TERM 进程号</code> 立即停止</p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="Nginx-全局属性的配置"><a href="#Nginx-全局属性的配置" class="headerlink" title="Nginx 全局属性的配置"></a>Nginx 全局属性的配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>user</strong>：主模块命令， 指定Nginx的worker进程运行用户以及用户组，默认由 nobody 账号运行。<br><strong>worker_processes</strong>: 指定 Nginx 要开启的进程数。<br><strong>error_log</strong>：用来定义全局错设日志文件的路径和日志名称。<br>日志输出级别有 debug，info，notice，warn，error，crit 可供选择，其中 debug 输出日志最为详细，而 crit（严重）输出日志最少。默认是 error。</p>
-<p><strong>pid</strong>: 用来指定进程 id 的存储文件位置。<br><strong>event</strong>：设定 nginx 的工作模式及连接数上限，其中参数 use 用来指定 nginx 的工作模式（这里是 epoll，epoll 是<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/aWU9VVRGLTgmYW1wO3dkPSVFNSVBNCU5QSVFOCVCNyVBRiVFNSVBNCU4RCVFNyU5NCVBOCUyMElP" title="https://www.baidu.com/s?ie=UTF-8&amp;wd=%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%20IO">多路复用 IO(I/O Multiplexing)<i class="fa fa-external-link"></i></span>中的一种方式）,<br>nginx 支持的工作模式有 select ,poll,kqueue,epoll,rtsig,/dev/poll。<br>其中 select 和 poll 都是标准的工作模式，kqueue 和 epoll 是高效的工作模式，对于 linux 系统，epoll 是首选。</p>
-<p><strong>worker_connection</strong>：是设置 nginx 每个进程最大的连接数，默认是1024，所以nginx最大的连接数 max_client=worker_processes * worker_connections。<br>进程最大连接数受到系统最大打开文件数的限制，需要设置 ulimit。</p>
-<h3 id="http-服务器相关属性的配置"><a href="#http-服务器相关属性的配置" class="headerlink" title="http 服务器相关属性的配置"></a>http 服务器相关属性的配置</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">    <span class="keyword">include</span>       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  '<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_local</span>] <span class="string">"$request"</span> '</span><br><span class="line">    #                  '<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> <span class="string">"$http_referer"</span> '</span><br><span class="line">    #                  '<span class="string">"$http_user_agent"</span> <span class="string">"$http_x_forwarded_for"</span>';</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.<span class="keyword">log</span>  main;</span><br><span class="line"></span><br><span class="line">    sendfile        <span class="keyword">on</span>;</span><br><span class="line">    #tcp_nopush     <span class="keyword">on</span>;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  <span class="keyword">on</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>include</strong>：主模块命令，对配置文件所包含文件的设定，减少主配置文件的复杂度，相当于把部分设置放在别的地方，然后在包含进来，保持主配置文件的简洁。<br><strong>default_type</strong>：默认文件类型，当文件类型未定义时候就使用这类设置的。<br><strong>log_format</strong>：设定日志格式。<br><strong>sendfile</strong>：开启高效文件传输模式（zero copy 方式），避免内核缓冲区数据和用户缓冲区数据之间的拷贝。<br><strong>tcp_nopush</strong>：开启 TCP_NOPUSH 套接字（sendfile 开启时有用）<br><strong>keepalive_timeout</strong>：客户端连接超时时间<br><strong>gzip</strong>：设置是否开启 gzip 模块</p>
-<h3 id="server-段虚拟主机的配置"><a href="#server-段虚拟主机的配置" class="headerlink" title="server 段虚拟主机的配置"></a>server 段虚拟主机的配置</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  localhost;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span>   html;</span><br><span class="line">        <span class="attribute">index</span>  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="attribute">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="attribute">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="attribute">root</span>   html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">    <span class="comment">#    proxy_pass   http://127.0.0.1;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">    <span class="comment">#    root           html;</span></span><br><span class="line">    <span class="comment">#    fastcgi_pass   127.0.0.1:9000;</span></span><br><span class="line">    <span class="comment">#    fastcgi_index  index.php;</span></span><br><span class="line">    <span class="comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span></span><br><span class="line">    <span class="comment">#    include        fastcgi_params;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># deny access to .htaccess files, if Apache's document root</span></span><br><span class="line">    <span class="comment"># concurs with nginx's one</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ /\.ht &#123;</span></span><br><span class="line">    <span class="comment">#    deny  all;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>listen</strong>：虚拟主机的服务端口<br><strong>server_name</strong>：用来指定ip或者域名，多个域名用逗号分开<br><strong>charset</strong>：设置字符编码<br><strong>location /</strong>：默认请求<br>    <strong>root</strong>：虚拟主机的网页根目录<br>    <strong>index</strong>：默认访问首页文件<br><strong>error_page</strong>：定义错误提示页面<br><strong>location ~ .php$</strong>：PHP 脚本请求全部转发到 FastCGI 处理.，使用FastCGI默认配置。<br><strong>location ~ /.ht</strong>：禁止访问 .htxxx 文件</p>
-<h2 id="Nginx-日志描述"><a href="#Nginx-日志描述" class="headerlink" title="Nginx 日志描述"></a>Nginx 日志描述</h2><p>通过访问日志，你可以得到用户地域来源、跳转来源、使用终端、某个URL访问量等相关信息；<br>通过错误日志，你可以得到系统某个服务或server的性能瓶颈等。</p>
-<p>因此，将日志好好利用，你可以得到很多有价值的信息。 </p>
-<p>日志格式<br>打开nginx.conf配置文件：<code>vi /usr/local/nginx/conf/nginx.conf</code><br>日志部分内容：<code>#access_log  logs/access.log  main;</code></p>
-<p>日志生成的到 Nginx 根目录 logs/access.log 文件，默认使用 <code>main</code> 日志格式，也可以自定义格式。</p>
-<p align="center" style="font-weight: bold;">参数明细表</p>
-
 <table>
 <thead>
 <tr>
-<th>参数</th>
-<th>说明</th>
+<th>引用</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>$remote_addr</td>
-<td>客户端的ip地址(代理服务器，显示代理服务ip)</td>
+<td>“$ref”:”..”</td>
+<td>上一级</td>
 </tr>
 <tr>
-<td>$remote_user</td>
-<td>用于记录远程客户端的用户名称（一般为“-”）</td>
+<td>“$ref”:”@”</td>
+<td>当前对象，也就是自引用</td>
 </tr>
 <tr>
-<td>$time_local</td>
-<td>用于记录访问时间和时区</td>
+<td>“$ref”:”$”</td>
+<td>根对象</td>
 </tr>
 <tr>
-<td>$request</td>
-<td>用于记录请求的url以及请求方法</td>
-</tr>
-<tr>
-<td>$status</td>
-<td>响应状态码，例如：200成功、404页面找不到等。</td>
-</tr>
-<tr>
-<td>$body_bytes_sent</td>
-<td>给客户端发送的文件主体内容字节数</td>
-</tr>
-<tr>
-<td>$http_user_agent</td>
-<td>用户所使用的代理（一般为浏览器）</td>
-</tr>
-<tr>
-<td>$http_x_forwarded_for</td>
-<td>可以记录客户端IP，通过代理服务器来记录客户端的ip地址</td>
-</tr>
-<tr>
-<td>$http_referer</td>
-<td>可以记录用户是从哪个链接访问过来的</td>
+<td>“$ref”:”$.children.0”</td>
+<td>基于路径的引用，相当于 root.getChildren().get(0)</td>
 </tr>
 </tbody>
 </table>
-<p>查看日志命令 <code>tail -f /usr/local/nginx/logs/access.log</code><br><span style="color: #f44336">持续更新中…</span></p>
-<p><img src="/images/Come on/Come on3.gif"></p>
+<h2 id="freemarker-判断对象是否为空"><a href="#freemarker-判断对象是否为空" class="headerlink" title="freemarker 判断对象是否为空"></a>freemarker 判断对象是否为空</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#<span class="meta-keyword">if</span> name??&gt;</span></span><br><span class="line">$&#123;<span class="built_in">name</span> &#125;</span><br><span class="line">&lt;/<span class="meta">#<span class="meta-keyword">if</span>&gt;</span></span><br><span class="line"></span><br><span class="line">$&#123;<span class="built_in">name</span>!<span class="string">''</span> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Set-无序不重复可用于比较对象"><a href="#Set-无序不重复可用于比较对象" class="headerlink" title="Set 无序不重复可用于比较对象"></a>Set 无序不重复可用于比较对象</h2><p>Set 里的元素无放入顺序，元素不可重复。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Person person1 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">20</span>);</span><br><span class="line">Person person2 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">20</span>);</span><br><span class="line">Set&lt;Person&gt; hasSet = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">hasSet.<span class="built_in">add</span>(person1);</span><br><span class="line">hasSet.<span class="built_in">add</span>(person2);</span><br><span class="line">System.out.<span class="built_in">println</span>(hasSet.<span class="built_in">size</span>());</span><br></pre></td></tr></table></figure></p>
+<h2 id="字符串转-List-lt-Class-gt"><a href="#字符串转-List-lt-Class-gt" class="headerlink" title="字符串转 List&lt;Class&gt;"></a>字符串转 <code>List&lt;Class&gt;</code></h2><p>使用的是 <code>JSONArray.parseArray</code> 而不是 <code>JSONArray.parseObject</code></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;Mobile&gt; mobiles = (<span class="built_in">List</span>&lt;Mobile&gt;) JSONArray.parseArray(str, Mobile.<span class="keyword">class</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="关于ajaxupload-js上传图片问题"><a href="#关于ajaxupload-js上传图片问题" class="headerlink" title="关于ajaxupload.js上传图片问题"></a>关于<code>ajaxupload.js</code>上传图片问题</h2><p>谷歌浏览器慎用有道词典，有道词典会导致body里面多一个元素<br><code>&lt;audio controls=&quot;controls&quot; style=&quot;display: none;&quot;&gt;&lt;/audio&gt;</code></p>
+<p>大多数的上传插件，为了实现无刷新页面上传，通常都会构建一个虚拟的 iframe 和 form，比如 ajaxupload，它会把 form 的 target 属性指定为 iframe 中的 name 值，目的是指定返回的页面在哪里打开，上传一般都是返回的 json 字符串，所以这时候返回 json 字符串就会被添加到 iframe 的 body 中，再获取 iframe 中 body 的值作为上传文件的返回结果。有道词典会在返回结果中多了一行<code>&lt;audio controls=&quot;controls&quot; style=&quot;display: none;&quot;&gt;&lt;/audio&gt;</code> </p>
+<ul>
+<li>可以关掉插件</li>
+<li>更换浏览器</li>
+</ul>
+<h2 id="Json字符串有转义字符"><a href="#Json字符串有转义字符" class="headerlink" title="Json字符串有转义字符"></a>Json字符串有转义字符</h2><p>分析：Json 多次转String会产生转义字符如<code>&quot;，\</code><br>解决方法：封装方法。<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 处理 json 字符串多出前后双引号和转义符</span></span><br><span class="line"><span class="comment"> * @param rspStr</span></span><br><span class="line"><span class="comment"> * @return</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> jsonRemoveEscaping(<span class="keyword">String</span> rspStr) &#123;</span><br><span class="line">    rspStr = rspStr.replace(<span class="string">"\\"</span>,<span class="string">""</span>).replace(<span class="string">"\"&#123;"</span>,<span class="string">"&#123;"</span>).replace(<span class="string">"&#125;\""</span>,<span class="string">"&#125;"</span>);</span><br><span class="line">    <span class="built_in">return</span> rspStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="携程-Apollo-配置中心本地启动"><a href="#携程-Apollo-配置中心本地启动" class="headerlink" title="携程 Apollo 配置中心本地启动"></a>携程 Apollo 配置中心本地启动</h2><blockquote>
+<p>注意事项</p>
+</blockquote>
+<ul>
+<li>一般只需要在<code>/opt/settings/server.properties</code>中配置了 env=DEV 就可以直接直接启动（因为 Client 在本地仓库的包上已经有了 meta_server 的信息）</li>
+<li>IDE 上也可以通过指定 VM 的参数，增加系统属性变量 -D 来实现调试</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Denv=DEV -Ddev_meta=http://10.20.25.119:18020</span><br></pre></td></tr></table></figure>
+<h2 id="判断线程池执行完，再执行下一步"><a href="#判断线程池执行完，再执行下一步" class="headerlink" title="判断线程池执行完，再执行下一步"></a>判断线程池执行完，再执行下一步</h2><ul>
+<li>isShutDown当调用shutdown()或shutdownNow()方法后返回为true。 </li>
+<li>isTerminated当调用shutdown()方法后，并且所有提交的任务完成后返回为true;</li>
+<li>isTerminated当调用shutdownNow()方法后，成功停止后返回为true;</li>
+<li>如果线程池任务正常完成，都为false</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; typeList = <span class="keyword">new</span> ArrayList&lt;&gt;();  </span><br><span class="line">typeList.add(<span class="number">1</span>);  </span><br><span class="line">typeList.add(<span class="number">2</span>);  </span><br><span class="line">typeList.add(<span class="number">3</span>);</span><br><span class="line">ExecutorService pool = Executors.newFixedThreadPool(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">final</span> <span class="keyword">int</span> type:typeList) &#123;</span><br><span class="line">        pool.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(type);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (pool != <span class="keyword">null</span>) &#123;</span><br><span class="line">        pool.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (!pool.isTerminated()) &#123;</span><br><span class="line">    <span class="comment">// 等待所有子线程结束</span></span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"end"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="comment">// if(pool.isTerminated())&#123;执行完后，要执行的部分（这个会往后面继续走的）&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="ibatis-查询日期会去掉时分秒"><a href="#ibatis-查询日期会去掉时分秒" class="headerlink" title="ibatis 查询日期会去掉时分秒"></a>ibatis 查询日期会去掉时分秒</h2><ul>
+<li>写 sql 的时候可以用 to_char 来转换</li>
+<li>自定义转换</li>
+</ul>
+<p><strong>自定义转换</strong></p>
+<p>通过配置一个 TypeHandler，让 TypeHandler 在转换的时候把<code>java.sql.Date</code>转换成<code>java.sql.Timestamp</code>。</p>
+<p>在 sqlMapConfig 中配一下:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeHandler</span> <span class="attr">javaType</span>=<span class="string">"object"</span> <span class="attr">callback</span>=<span class="string">"xxx.xxx.OracleObjectTypeHandler"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>代码<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">OracleObjectTypeHandler</span> <span class="keyword">extends</span> <span class="title">BaseTypeHandler</span> <span class="title">implements</span></span></span><br><span class="line"><span class="class">        <span class="title">TypeHandler</span> </span>&#123;</span><br><span class="line">    public <span class="type">Object</span> getResult(<span class="type">ResultSet</span> rs, <span class="type">String</span> columnName)</span><br><span class="line">            <span class="keyword">throws</span> <span class="type">SQLException</span> &#123;</span><br><span class="line">        <span class="type">Object</span> <span class="class"><span class="keyword">object</span> </span>= rs.getObject(columnName);</span><br><span class="line">        <span class="keyword">if</span> (rs.wasNull()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            boolean b = <span class="class"><span class="keyword">object</span> <span class="title">instanceof</span> <span class="title">java</span>.<span class="title">sql</span>.<span class="title">Date</span></span>;</span><br><span class="line">            <span class="keyword">if</span> (b)</span><br><span class="line">                <span class="class"><span class="keyword">object</span> </span>= <span class="keyword">new</span> <span class="type">Date</span>(rs.getTimestamp(columnName).getTime());</span><br><span class="line">            <span class="keyword">return</span> <span class="class"><span class="keyword">object</span></span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public <span class="type">Object</span> getResult(<span class="type">ResultSet</span> rs, int columnIndex) <span class="keyword">throws</span> <span class="type">SQLException</span> &#123;</span><br><span class="line">        <span class="type">Object</span> <span class="class"><span class="keyword">object</span> </span>= rs.getObject(columnIndex);</span><br><span class="line">        <span class="keyword">if</span> (rs.wasNull()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            boolean b = <span class="class"><span class="keyword">object</span> <span class="title">instanceof</span> <span class="title">java</span>.<span class="title">sql</span>.<span class="title">Date</span></span>;</span><br><span class="line">            <span class="keyword">if</span> (b)</span><br><span class="line">                <span class="class"><span class="keyword">object</span> </span>= <span class="keyword">new</span> <span class="type">Date</span>(rs.getTimestamp(columnIndex).getTime());</span><br><span class="line">            <span class="keyword">return</span> <span class="class"><span class="keyword">object</span></span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public <span class="type">Object</span> getResult(<span class="type">CallableStatement</span> cs, int columnIndex)</span><br><span class="line">            <span class="keyword">throws</span> <span class="type">SQLException</span> &#123;</span><br><span class="line">        <span class="type">Object</span> <span class="class"><span class="keyword">object</span> </span>= cs.getObject(columnIndex);</span><br><span class="line">        <span class="keyword">if</span> (cs.wasNull()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            boolean b = <span class="class"><span class="keyword">object</span> <span class="title">instanceof</span> <span class="title">java</span>.<span class="title">sql</span>.<span class="title">Date</span></span>;</span><br><span class="line">            <span class="keyword">if</span> (b)</span><br><span class="line">                <span class="class"><span class="keyword">object</span> </span>= <span class="keyword">new</span> <span class="type">Date</span>(cs.getTimestamp(columnIndex).getTime());</span><br><span class="line">            <span class="keyword">return</span> <span class="class"><span class="keyword">object</span></span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public <span class="type">Object</span> valueOf(<span class="type">String</span> s) &#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void setParameter(<span class="type">PreparedStatement</span> ps, int i, <span class="type">Object</span> parameter,</span><br><span class="line">            <span class="type">String</span> jdbcType) <span class="keyword">throws</span> <span class="type">SQLException</span> &#123;</span><br><span class="line">        ps.setObject(i, parameter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="SpringMvc-表单提交时-date-类型"><a href="#SpringMvc-表单提交时-date-类型" class="headerlink" title="SpringMvc 表单提交时 date 类型"></a>SpringMvc 表单提交时 date 类型</h2><p>form表单中的数据是基本类型的，对时间类型是不支持的</p>
+<ul>
+<li>方法一：在对应的 Controller 中新增下面的方法（针对一个类）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* form表单提交 Date类型数据绑定 </span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> binder </span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line"><span class="meta">@InitBinder</span>    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initBinder</span><span class="params">(WebDataBinder binder)</span> </span>&#123;    </span><br><span class="line">    SimpleDateFormat dateFormat = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">    dateFormat.setLenient(<span class="keyword">false</span>);    </span><br><span class="line">    binder.registerCustomEditor(Date.class, <span class="keyword">new</span> CustomDateEditor(dateFormat, <span class="keyword">true</span>));    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二：在实体类中添加注解</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@DateTimeFormat</span>(pattern=<span class="string">"yyyy-MM-dd"</span>) </span><br><span class="line"><span class="keyword">private</span> Date birthday;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：配置<code>&lt;mvc:annotation-driven/&gt;</code>，默认就启用 FormattingConversionServiceFactoryBean 了。</p>
+</blockquote>
+<h2 id="idea-工程上传的图片，页面显示不出来"><a href="#idea-工程上传的图片，页面显示不出来" class="headerlink" title="idea 工程上传的图片，页面显示不出来"></a>idea 工程上传的图片，页面显示不出来</h2><p>1）idea里面配置<code>static/image/upload</code>文件资源</p>
+<p><img src="https://i.loli.net/2019/06/20/5d0b450872aa152027.png" alt="idea里面配置static/image/upload文件资源"></p>
+<p>2）idea中tomcat发布项目的默认路径是项目所在地里的target目录里面，修改工程输出到Tomcat下</p>
+<p><img src="https://i.loli.net/2019/06/20/5d0b4508dad9c11853.png" alt="修改工程输出到Tomcat下"></p>
 
       
     </div>
@@ -686,7 +673,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://yandongquan.github.io/2018/04/15/分布式架构-Nginx.html" title="分布式架构 - Nginx">https://yandongquan.github.io/2018/04/15/分布式架构-Nginx.html</a>
+    <a href="https://yandongquan.github.io/2019/04/20/JavaWeb-开发经验-01.html" title="JavaWeb 开发经验 01">https://yandongquan.github.io/2019/04/20/JavaWeb-开发经验-01.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -702,11 +689,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/分布式/" rel="tag"><i class="fa fa-tag"></i> 分布式</a>
+            <a href="/tags/JavaWeb/" rel="tag"><i class="fa fa-tag"></i> JavaWeb</a>
           
-            <a href="/tags/架构/" rel="tag"><i class="fa fa-tag"></i> 架构</a>
-          
-            <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
+            <a href="/tags/开发经验/" rel="tag"><i class="fa fa-tag"></i> 开发经验</a>
           
         </div>
       
@@ -719,15 +704,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/03/分布式架构-协调服务器Zookeeper.html" rel="next" title="分布式架构 - 协调服务器 Zookeeper">
+                <i class="fa fa-chevron-left"></i> 分布式架构 - 协调服务器 Zookeeper
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/16/分布式系统-内存数据库Redis.html" rel="prev" title="分布式系统 - 内存数据库Redis">
-                分布式系统 - 内存数据库Redis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -959,7 +944,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Nginx"><span class="nav-number">1.</span> <span class="nav-text">什么是 Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-的优势"><span class="nav-number">2.</span> <span class="nav-text">Nginx 的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式架构中的作用"><span class="nav-number">3.</span> <span class="nav-text">分布式架构中的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理"><span class="nav-number">4.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-安装"><span class="nav-number">5.</span> <span class="nav-text">Nginx 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#源码编译方式"><span class="nav-number">5.1.</span> <span class="nav-text">源码编译方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yum-方式"><span class="nav-number">5.2.</span> <span class="nav-text">yum 方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">5.3.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启停命令"><span class="nav-number">5.4.</span> <span class="nav-text">启停命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送信号的方式"><span class="nav-number">5.5.</span> <span class="nav-text">发送信号的方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">6.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-全局属性的配置"><span class="nav-number">6.1.</span> <span class="nav-text">Nginx 全局属性的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http-服务器相关属性的配置"><span class="nav-number">6.2.</span> <span class="nav-text">http 服务器相关属性的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#server-段虚拟主机的配置"><span class="nav-number">6.3.</span> <span class="nav-text">server 段虚拟主机的配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-日志描述"><span class="nav-number">7.</span> <span class="nav-text">Nginx 日志描述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-对象转成-JSON-字符串，出现-ref"><span class="nav-number">1.</span> <span class="nav-text">java 对象转成 JSON 字符串，出现  $ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#freemarker-判断对象是否为空"><span class="nav-number">2.</span> <span class="nav-text">freemarker 判断对象是否为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-无序不重复可用于比较对象"><span class="nav-number">3.</span> <span class="nav-text">Set 无序不重复可用于比较对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串转-List-lt-Class-gt"><span class="nav-number">4.</span> <span class="nav-text">字符串转 List&lt;Class&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于ajaxupload-js上传图片问题"><span class="nav-number">5.</span> <span class="nav-text">关于ajaxupload.js上传图片问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Json字符串有转义字符"><span class="nav-number">6.</span> <span class="nav-text">Json字符串有转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#携程-Apollo-配置中心本地启动"><span class="nav-number">7.</span> <span class="nav-text">携程 Apollo 配置中心本地启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断线程池执行完，再执行下一步"><span class="nav-number">8.</span> <span class="nav-text">判断线程池执行完，再执行下一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ibatis-查询日期会去掉时分秒"><span class="nav-number">9.</span> <span class="nav-text">ibatis 查询日期会去掉时分秒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMvc-表单提交时-date-类型"><span class="nav-number">10.</span> <span class="nav-text">SpringMvc 表单提交时 date 类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea-工程上传的图片，页面显示不出来"><span class="nav-number">11.</span> <span class="nav-text">idea 工程上传的图片，页面显示不出来</span></a></li></ol></div>
             
 
           </div>
