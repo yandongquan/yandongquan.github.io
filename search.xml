@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[JavaWeb 开发经验 02]]></title>
     <url>%2F2019%2F04%2F26%2FJavaWeb-%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C-02.html</url>
-    <content type="text"><![CDATA[java 对象转成 JSON 字符串，出现 $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect) 引用是通过$ref来表示的 引用 描述 “$ref”:”..” 上一级 “$ref”:”@” 当前对象，也就是自引用 “$ref”:”$” 根对象 “$ref”:”$.children.0” 基于路径的引用，相当于 root.getChildren().get(0) freemarker 判断对象是否为空12345&lt;#if name??&gt;$&#123;name &#125;&lt;/#if&gt;$&#123;name!'' &#125; 持续更新中…]]></content>
+    <content type="text"><![CDATA[java 对象转成 JSON 字符串，出现 $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect) 引用是通过$ref来表示的 引用 描述 “$ref”:”..” 上一级 “$ref”:”@” 当前对象，也就是自引用 “$ref”:”$” 根对象 “$ref”:”$.children.0” 基于路径的引用，相当于 root.getChildren().get(0) freemarker 判断对象是否为空12345&lt;#if name??&gt;$&#123;name &#125;&lt;/#if&gt;$&#123;name!'' &#125; button 标签（问题：回车会提交的）submit 该按钮是提交按钮（除了 Internet Explorer，该值是其他浏览器的默认值） 持续更新中…]]></content>
       <categories>
         <category>开发经验</category>
       </categories>
@@ -74,8 +74,8 @@
       </categories>
       <tags>
         <tag>架构</tag>
-        <tag>Spring Boot</tag>
         <tag>微服务</tag>
+        <tag>Spring Boot</tag>
       </tags>
   </entry>
   <entry>
