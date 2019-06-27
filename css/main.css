@@ -1858,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff2e57;
+  background: #265793;
 }
 .feed-link,
 .chat {
@@ -2734,4 +2734,10 @@ embed {
 .custom-logo-site-title a:hover,
 span.exturl:hover {
   border: 0;
+}
+#qr img {
+  width: 160px;
+  max-width: 100%;
+  display: inline-block;
+  margin: 0.8em 1em 0 1em;
 }
