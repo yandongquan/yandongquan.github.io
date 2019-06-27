@@ -157,7 +157,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/06/24/5d10392ae815c23251.png">
 <meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on8.gif">
-<meta property="og:updated_time" content="2019-06-26T06:22:59.158Z">
+<meta property="og:updated_time" content="2019-06-27T09:24:41.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb 开发经验 02">
 <meta name="twitter:description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测">
@@ -568,6 +568,8 @@
 <li>JS 版本</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> telStr = <span class="string">"/^[1]([3-9])[0-9]&#123;9&#125;$/"</span>;</span><br><span class="line"><span class="keyword">if</span> (!(telStr.test(number))) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"手机号格式不合法"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS-怎么引用字体包"><a href="#CSS-怎么引用字体包" class="headerlink" title="CSS 怎么引用字体包"></a>CSS 怎么引用字体包</h2><p>加入一下代码，css 直接引用字体名称即可。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'MyNewFont'</span>;   <span class="comment">/*字体名称*/</span></span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'font.ttf'</span>);       <span class="comment">/*字体源文件*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><span style="color:#CA0C16">持续更新中…</span><br><img src="/images/Come on/Come on8.gif"></p>
 
       
@@ -599,26 +601,8 @@
         
       
       <div style="display: inline-block">
-        <img src="/images/zhuanshangjin.png" alt="Yan Dongquan 扫码领个红包">
-        <p>扫码领个红包</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/weixin.jpg" alt="Yan Dongquan 微信">
-        <p>微信</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/alipay.jpg" alt="Yan Dongquan 支付宝">
-        <p>支付宝</p>
+        <img src="/images/zhuanshangjin.png" alt="Yan Dongquan 支付宝扫码领红包">
+        <p>支付宝扫码领红包</p>
       </div>
     
 
@@ -916,7 +900,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-对象转成-JSON-字符串，出现-ref"><span class="nav-number">1.</span> <span class="nav-text">java 对象转成 JSON 字符串，出现  $ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#freemarker-判断对象是否为空"><span class="nav-number">2.</span> <span class="nav-text">freemarker 判断对象是否为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#button-标签（问题：回车会提交的）"><span class="nav-number">3.</span> <span class="nav-text">button 标签（问题：回车会提交的）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#校验手机格式"><span class="nav-number">4.</span> <span class="nav-text">校验手机格式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-对象转成-JSON-字符串，出现-ref"><span class="nav-number">1.</span> <span class="nav-text">java 对象转成 JSON 字符串，出现  $ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#freemarker-判断对象是否为空"><span class="nav-number">2.</span> <span class="nav-text">freemarker 判断对象是否为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#button-标签（问题：回车会提交的）"><span class="nav-number">3.</span> <span class="nav-text">button 标签（问题：回车会提交的）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#校验手机格式"><span class="nav-number">4.</span> <span class="nav-text">校验手机格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-怎么引用字体包"><span class="nav-number">5.</span> <span class="nav-text">CSS 怎么引用字体包</span></a></li></ol></div>
             
 
           </div>
@@ -970,7 +954,7 @@
     </span>
     <!-- 博客字数统计 -->
     <span class="site-pv">
-      <i class="fa fa-pencil-square-o"></i> <span class="post-count">7.2k</span>
+      <i class="fa fa-pencil-square-o"></i> <span class="post-count">7.3k</span>
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
