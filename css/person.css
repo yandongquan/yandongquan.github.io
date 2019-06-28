@@ -14,3 +14,6 @@ span.exturl:hover {
   display: inline-block;
   margin: 0.8em 1em 0 1em;
 }
+.text_red {
+  color: #f44336;
+}

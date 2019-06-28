@@ -1858,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9fee55;
+  background: #fff;
 }
 .feed-link,
 .chat {
@@ -2740,4 +2740,7 @@ span.exturl:hover {
   max-width: 100%;
   display: inline-block;
   margin: 0.8em 1em 0 1em;
+}
+.text_red {
+  color: #f44336;
 }
