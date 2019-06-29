@@ -8,7 +8,7 @@ tags:
 categories:
 - 分布式
 ---
-
+<img style="height:75px" src="http://nginx.org/nginx.png" alt="Nginx">
 ## 什么是 Nginx
 
 Nginx 是俄罗斯人编写的一款<span style="color: #f44336">高性能的 HTTP 和反向代理服务器</span>。

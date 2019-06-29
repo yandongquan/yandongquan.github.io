@@ -8,10 +8,11 @@ tags:
 categories:
 - 微服务架构
 ---
+<img style="height:75px" src="https://spring.io/img/homepage/icon-spring-boot.svg" alt="Spring Boot">
+## 什么是 Spring Boot
 
-## 什么是SpringBoot
+Spring Boot 是 Spring 项目中的一个子工程，与我们所熟知的 Spring-framework 同属于 spring 的产品。
 
-SpringBoot 是 Spring 项目中的一个子工程，与我们所熟知的 Spring-framework 同属于 spring 的产品。
 <!-- more -->
 
 我们可以看到下面的一段介绍：
@@ -24,7 +25,7 @@ SpringBoot 是 Spring 项目中的一个子工程，与我们所熟知的 Spring
 
 其实人们把 Spring Boot 称为搭建程序的<span style="color: #CA0C16">脚手架</span>。其最主要作用就是帮我们快速的构建庞大的 spring 项目，并且尽可能的减少一切 xml 配置，做到开箱即用，迅速上手，让我们关注与业务而非配置。
 
-## 为什么要学习SpringBoot
+## 为什么要学习 Spring Boot
 
 java 一直被人诟病的一点就是臃肿、麻烦。当我们还在辛苦的搭建项目时，可能 Python 程序员已经把功能写好了，究其原因注意是两点：
 
@@ -38,7 +39,7 @@ java 一直被人诟病的一点就是臃肿、麻烦。当我们还在辛苦的
 
 我们可以使用 SpringBoot 创建 java 应用，并使用`java –jar `启动它，就能得到一个生产级别的 web 工程。
 
-## SpringBoot的优点
+## Spring Boot 的优点
 Spring Boot 主要目标是：
 - 为所有 Spring 的开发者提供一个非常快速的、广泛接受的入门体验。
 - 开箱即用（启动器 starter-其实就是 SpringBoot 提供的一个 jar 包），但通过自己设置参数（.properties），即可快速摆脱这种方式。
@@ -117,6 +118,6 @@ public class HelloController {
 - Spring boot 整合 MQ
 - Spring boot 整合 ...
 
-更多细节，大家可以到[Spring boot 官网](http://projects.spring.io/spring-boot/)查看。
-
+> 官方文档是最好的教程网站Spring boot 官网，大家可以到[Spring boot 官网](https://spring.io/projects/spring-boot/#learn) 学习更多知识。
+s
 <img src="/images/Come on/Come on11.gif">

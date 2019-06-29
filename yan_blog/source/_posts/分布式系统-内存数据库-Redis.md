@@ -1,5 +1,5 @@
 ---
-title: 分布式系统 - 内存数据库Redis
+title: 分布式系统 - 内存数据库 Redis
 date: 2018-05-16 00:11:36
 tags:
 - 分布式
@@ -9,6 +9,9 @@ tags:
 categories:
 - 分布式
 ---
+
+<img style="height:75px" src="https://redis.io/images/redis-small.png" alt="Redis">
+
 ## 什么是 NoSql
 NoSQL，即 Not-Only SQL，泛指非关系型的数据库。它是为了解决<span style="color: #f44336">高并发、高可用、高可扩展、大数据存储问题</span>而产生的数据库解决方案。
 <!-- more -->
@@ -47,6 +50,7 @@ NoSQL 可以作为关系型数据库的良好补充，但是不能替代关系�
 
 
 ## Redis 是什么
+
 Redis 是用 C 语言开发的一个开源的高性能键值对（key-value）数据库。它通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止 Redis 支持的键值数据类型如下：
 - 字符串类型
 - 散列类型

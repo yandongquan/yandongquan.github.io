@@ -81,10 +81,10 @@ symbol:
   period: "。"
   colon: "："
 reward:
-  donate: 打赏
-  wechatpay: 微信支付
+  donate: 扫码领个红包
+  wechatpay: 微信
   alipay: 支付宝
-  bitcoin: 比特币
+  bitcoin: 支付宝扫码领红包
 gitmentbutton: 显示 Gitment 评论
 accessibility:
   nav_toggle: 切换导航栏

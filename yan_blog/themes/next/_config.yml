@@ -358,8 +358,9 @@ reward_settings:
   comment: 🐼 您的支持将鼓励我继续创作 🐼
 
 reward:
-  wechatpay: /images/weixin.jpg
-  alipay: /images/alipay.jpg
+  bitcoin: /images/zhuanshangjin.png
+  #wechatpay: /images/weixin.jpg
+  #alipay: /images/alipay.jpg
   #bitcoin: /images/alipay.jpg
 
 # Related popular posts

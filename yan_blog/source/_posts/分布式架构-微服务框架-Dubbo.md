@@ -1,5 +1,5 @@
 ---
-title: 分布式架构 - 微服务框架Dubbo
+title: 分布式架构 - 微服务框架 Dubbo
 date: 2019-03-21 17:34:01
 tags:
 - 分布式
@@ -9,6 +9,8 @@ tags:
 categories:
 - 分布式
 ---
+
+<img style="height:40px" src="http://dubbo.apache.org/img/dubbo_colorful.png" alt="Dubbo">
 ## Dubbo 的背景
 随着互联网的发展，网站应用的规模不断扩大，常规的垂直应用架构已无法应对，分布式服务架构以及流动计算架构势在必行，急需一个治理系统确保架构有条不紊的演进。
 <!-- more -->

@@ -7,7 +7,7 @@ tags:
 categories:
 - 开发经验
 ---
-
+<img style="height:75px" src="https://i.loli.net/2019/06/24/5d10392ae815c23251.png" alt="Java">
 ## Set 无序不重复可用于比较对象
 
 Set 里的元素无放入顺序，元素不可重复。

@@ -60,3 +60,20 @@
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
+
+<!-- 新增访客统计代码 -->
+<div class="busuanzi-count" style = "display: none">
+    <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      <i class="fa fa-user-o"></i> <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+    <!-- 博客字数统计 -->
+    <span class="site-pv">
+      <i class="fa fa-pencil-square-o"></i> <span class="post-count">{{ totalcount(site) }}</span>
+    </span>
+</div>
+<!-- 新增访客统计代码 END-->

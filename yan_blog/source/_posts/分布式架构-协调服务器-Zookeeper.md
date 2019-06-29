@@ -9,6 +9,9 @@ tags:
 categories:
 - 分布式
 ---
+
+![Zookeeper](https://zookeeper.apache.org/doc/current/images/zookeeper_small.gif)
+
 ## 什么是 Zookeeper
 
 Zookeeper 是一个分布式开源框架，提供了协调分布式应用的基本服务，它向外部应用暴露一组通用服务——分布式同步（Distributed Synchronization）、命名服务（Naming Service）、集群维护（Group Maintenance）等，简化分布式应用协调及其管理的难度，提供高性能的分布式服务。ZooKeeper本身可以以单机模式安装运行，不过它的长处在于通过分布式 ZooKeeper 集群（一个 Leader，多个 Follower），基于一定的策略来保证 ZooKeeper 集群的稳定性和可用性，从而实现分布式应用的可靠性。
@@ -63,6 +66,8 @@ ZooKeeper 中同样存在临时节点。这些节点与 session 同时存在，�
 - 集群管理与 Master 选举
 - 分布式锁
 - 分布式事务
+
+更多教程可以参考官方文档，大家可以去[Apache ZooKeeper 官方文档](https://zookeeper.apache.org/doc/current/index.html)。
 
 <span style="color:#CA0C16">持续更新中...</span>
 <img src="/images/Come on/Come on6.gif">
