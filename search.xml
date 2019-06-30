@@ -16,7 +16,7 @@
   <entry>
     <title><![CDATA[JavaWeb 开发经验 02]]></title>
     <url>%2F2019%2F04%2F26%2FJavaWeb-%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C-02.html</url>
-    <content type="text"><![CDATA[java 对象转成 JSON 字符串，出现 $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect) 引用是通过$ref来表示的 引用 描述 “$ref”:”..” 上一级 “$ref”:”@” 当前对象，也就是自引用 “$ref”:”$” 根对象 “$ref”:”$.children.0” 基于路径的引用，相当于 root.getChildren().get(0) freemarker 判断对象是否为空12345&lt;#if name??&gt;$&#123;name &#125;&lt;/#if&gt;$&#123;name!'' &#125; button 标签（问题：回车会提交的）submit 该按钮是提交按钮（除了 Internet Explorer，该值是其他浏览器的默认值） 校验手机格式由于运营商号段随时会变，故采取非严谨的规则。 Java 版本 12345678910/** * 校验手机号 * @param number * @return */private boolean checkPhoneNumber(String number) &#123; String regex = "^[1]([3-9])[0-9]&#123;9&#125;$"; Pattern pattern = Pattern.compile(regex); return pattern.matcher(number).matches();&#125; JS 版本 1234var telStr = "/^[1]([3-9])[0-9]&#123;9&#125;$/";if (!(telStr.test(number))) &#123; console.log("手机号格式不合法");&#125; CSS 怎么引用字体包加入一下代码，css 直接引用字体名称即可。 1234@font-face &#123; font-family: 'MyNewFont'; /*字体名称*/ src: url('font.ttf'); /*字体源文件*/&#125; 持续更新中…]]></content>
+    <content type="text"><![CDATA[java 对象转成 JSON 字符串，出现 $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测 1JSON.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect) 引用是通过$ref来表示的 引用 描述 “$ref”:”..” 上一级 “$ref”:”@” 当前对象，也就是自引用 “$ref”:”$” 根对象 “$ref”:”$.children.0” 基于路径的引用，相当于 root.getChildren().get(0) freemarker 判断对象是否为空12345&lt;#if name??&gt;$&#123;name &#125;&lt;/#if&gt;$&#123;name!'' &#125; button 标签（问题：回车会提交的）submit 该按钮是提交按钮（除了 Internet Explorer，该值是其他浏览器的默认值） 校验手机格式由于运营商号段随时会变，故采取非严谨的规则。 Java 版本 12345678910/** * 校验手机号 * @param number * @return */private boolean checkPhoneNumber(String number) &#123; String regex = "^[1]([3-9])[0-9]&#123;9&#125;$"; Pattern pattern = Pattern.compile(regex); return pattern.matcher(number).matches();&#125; JS 版本 1234var telStr = "/^[1]([3-9])[0-9]&#123;9&#125;$/";if (!(telStr.test(number))) &#123; console.log("手机号格式不合法");&#125; CSS 怎么引用字体包加入一下代码，css 直接引用字体名称即可。 1234@font-face &#123; font-family: 'MyNewFont'; /*字体名称*/ src: url('font.ttf'); /*字体源文件*/&#125; 解决引入外网资源 403 forbidden 问题页面中引入外网的链接资源，会产生一个新的 Http 清求。为了安全（URL 里可能包含用户信息），浏览器一般都会在请求头加上 referrer 字段表示来源的。 所以，此时我们要隐藏外部链接中的 referrer，在 head 标签中加入 meta，代码如下 1&lt;meta name="referrer" content="no-referrer"&gt; 持续更新中…]]></content>
       <categories>
         <category>开发经验</category>
       </categories>
@@ -45,8 +45,8 @@
         <category>分布式</category>
       </categories>
       <tags>
-        <tag>分布式</tag>
         <tag>架构</tag>
+        <tag>分布式</tag>
         <tag>协调服务器</tag>
         <tag>Zookeeper</tag>
       </tags>
@@ -59,9 +59,9 @@
         <category>分布式</category>
       </categories>
       <tags>
-        <tag>分布式</tag>
-        <tag>架构</tag>
         <tag>微服务</tag>
+        <tag>架构</tag>
+        <tag>分布式</tag>
         <tag>Dubbo</tag>
       </tags>
   </entry>
@@ -73,8 +73,8 @@
         <category>微服务架构</category>
       </categories>
       <tags>
-        <tag>架构</tag>
         <tag>微服务</tag>
+        <tag>架构</tag>
         <tag>Spring Cloud</tag>
       </tags>
   </entry>
@@ -86,8 +86,8 @@
         <category>微服务架构</category>
       </categories>
       <tags>
-        <tag>架构</tag>
         <tag>微服务</tag>
+        <tag>架构</tag>
         <tag>Spring Boot</tag>
       </tags>
   </entry>
@@ -113,8 +113,8 @@
         <category>分布式</category>
       </categories>
       <tags>
-        <tag>分布式</tag>
         <tag>架构</tag>
+        <tag>分布式</tag>
         <tag>Nginx</tag>
       </tags>
   </entry>
