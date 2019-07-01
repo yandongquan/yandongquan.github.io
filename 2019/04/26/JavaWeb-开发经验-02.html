@@ -157,7 +157,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/06/24/5d10392ae815c23251.png">
 <meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on8.gif">
-<meta property="og:updated_time" content="2019-06-30T08:11:13.922Z">
+<meta property="og:updated_time" content="2019-07-01T03:00:01.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb 开发经验 02">
 <meta name="twitter:description" content="java 对象转成 JSON 字符串，出现  $ref原因：List 里含有重复对象使用：DisableCircularReferenceDetect 来禁止循环引用检测">
@@ -573,6 +573,12 @@
 <h2 id="解决引入外网资源-403-forbidden-问题"><a href="#解决引入外网资源-403-forbidden-问题" class="headerlink" title="解决引入外网资源 403 forbidden 问题"></a>解决引入外网资源 403 forbidden 问题</h2><p>页面中引入外网的链接资源，会产生一个新的 Http 清求。为了安全（URL 里可能包含用户信息），浏览器一般都会在请求头加上 referrer 字段表示来源的。</p>
 <p>所以，此时我们要隐藏外部链接中的 referrer，在 head 标签中加入 meta，代码如下</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"referrer"</span> <span class="attribute">content</span>=<span class="string">"no-referrer"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Float-和-Double-的精度缺失问题"><a href="#Float-和-Double-的精度缺失问题" class="headerlink" title="Float 和 Double 的精度缺失问题"></a>Float 和 Double 的精度缺失问题</h2><p>Float 和 Double 数据进行运算会出现精度丢失问题。解决方法：</p>
+<ul>
+<li>避免小数的使用</li>
+<li>使用 BigDecimal 的 String 构造函数</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> dis = <span class="number">6</span>*<span class="number">0.1</span>D;</span><br><span class="line">System.out.<span class="built_in">println</span>(dis); <span class="comment">// 0.6000000000000001</span></span><br><span class="line"><span class="comment">// 第一种</span></span><br><span class="line"><span class="keyword">double</span> dis2 = <span class="number">6</span>/<span class="number">10</span>D;</span><br><span class="line">System.out.<span class="built_in">println</span>(dis2); <span class="comment">// 0.6</span></span><br><span class="line"><span class="comment">// 第二种</span></span><br><span class="line">BigDecimal bigDecimal = <span class="keyword">new</span> BigDecimal(<span class="string">"6"</span>);</span><br><span class="line">BigDecimal bigDecimal2 = <span class="keyword">new</span> BigDecimal(<span class="string">"0.1"</span>);</span><br><span class="line">System.out.<span class="built_in">println</span>(bigDecimal.multiply(bigDecimal2)); <span class="comment">// 0.6</span></span><br></pre></td></tr></table></figure>
 <p><span style="color:#CA0C16">持续更新中…</span><br><img src="/images/Come on/Come on8.gif"></p>
 
       
@@ -913,7 +919,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-对象转成-JSON-字符串，出现-ref"><span class="nav-number">1.</span> <span class="nav-text">java 对象转成 JSON 字符串，出现  $ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#freemarker-判断对象是否为空"><span class="nav-number">2.</span> <span class="nav-text">freemarker 判断对象是否为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#button-标签（问题：回车会提交的）"><span class="nav-number">3.</span> <span class="nav-text">button 标签（问题：回车会提交的）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#校验手机格式"><span class="nav-number">4.</span> <span class="nav-text">校验手机格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-怎么引用字体包"><span class="nav-number">5.</span> <span class="nav-text">CSS 怎么引用字体包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决引入外网资源-403-forbidden-问题"><span class="nav-number">6.</span> <span class="nav-text">解决引入外网资源 403 forbidden 问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-对象转成-JSON-字符串，出现-ref"><span class="nav-number">1.</span> <span class="nav-text">java 对象转成 JSON 字符串，出现  $ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#freemarker-判断对象是否为空"><span class="nav-number">2.</span> <span class="nav-text">freemarker 判断对象是否为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#button-标签（问题：回车会提交的）"><span class="nav-number">3.</span> <span class="nav-text">button 标签（问题：回车会提交的）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#校验手机格式"><span class="nav-number">4.</span> <span class="nav-text">校验手机格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-怎么引用字体包"><span class="nav-number">5.</span> <span class="nav-text">CSS 怎么引用字体包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决引入外网资源-403-forbidden-问题"><span class="nav-number">6.</span> <span class="nav-text">解决引入外网资源 403 forbidden 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Float-和-Double-的精度缺失问题"><span class="nav-number">7.</span> <span class="nav-text">Float 和 Double 的精度缺失问题</span></a></li></ol></div>
             
 
           </div>
@@ -967,7 +973,7 @@
     </span>
     <!-- 博客字数统计 -->
     <span class="site-pv">
-      <i class="fa fa-pencil-square-o"></i> <span class="post-count">9.5k</span>
+      <i class="fa fa-pencil-square-o"></i> <span class="post-count">9.6k</span>
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
