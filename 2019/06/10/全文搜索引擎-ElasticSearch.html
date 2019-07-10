@@ -156,7 +156,8 @@
 <meta property="og:description" content="ElasticSearch 是什么ElasticSearch 是一个基于 Lucene 构建的开源、分布式、RESTful 接口全文搜索引擎。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/07/10/5d2595fec7ef765592.png">
-<meta property="og:updated_time" content="2019-07-10T07:58:32.012Z">
+<meta property="og:image" content="https://yandongquan.github.io/images/Come%20on/Come%20on11.gif">
+<meta property="og:updated_time" content="2019-07-10T09:55:43.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全文搜索引擎 ElasticSearch">
 <meta name="twitter:description" content="ElasticSearch 是什么ElasticSearch 是一个基于 Lucene 构建的开源、分布式、RESTful 接口全文搜索引擎。">
@@ -528,8 +529,36 @@
 <h2 id="ElasticSearch-的优点"><a href="#ElasticSearch-的优点" class="headerlink" title="ElasticSearch 的优点"></a>ElasticSearch 的优点</h2><ul>
 <li><strong>横向可扩展性：</strong>只需要增加台服务器，做一点儿配置，启动一下Elasticsearch就可以并入集群。</li>
 <li><strong>分片机制提供更好的分布性：</strong>同一个索引分成多个分片(sharding), 这点类似于HDFS的块机制;分而治之的方式可提升处理效率。</li>
-<li><strong>高可用：</strong>提供复制( replica) 机制，一个分片可以设置多个复制，使得某台服务器在宕机的情况下，集群仍旧可以照常运行，并会把服务器宕机丢失的数据信息复制恢复到其他可用节点上。口使用简单:共需一条命令就可以下载文件，然后很快就能搭建一一个站内搜索引擎。</li>
+<li><strong>高可用：</strong>提供复制机制，一个分片可以设置多个复制，使得某台服务器在宕机的情况下，集群仍旧可以照常运行，并会把服务器宕机丢失的数据信息复制恢复到其他可用节点上。</li>
 </ul>
+<h2 id="ElasticSearch-应用场景"><a href="#ElasticSearch-应用场景" class="headerlink" title="ElasticSearch 应用场景"></a>ElasticSearch 应用场景</h2><ul>
+<li>大型分布式日志分析系统：如 ELK （ElasticSearch(存储日志)+logstash(收集日志)+kibana(展示数据)）</li>
+<li>大型分布式搜索系统：如电商商品搜索，网盘搜索引擎</li>
+</ul>
+<h2 id="ElasticSearch-存储结构"><a href="#ElasticSearch-存储结构" class="headerlink" title="ElasticSearch 存储结构"></a>ElasticSearch 存储结构</h2><p>Elasticsearch是文件存储，Elasticsearch是面向文档型数据库，一条数据在这里就是一个文档，用JSON作为文档序列化的格式。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"John"</span>,</span><br><span class="line">    <span class="attr">"sex"</span>: <span class="string">"Male"</span>,</span><br><span class="line">    <span class="attr">"age"</span>: <span class="number">25</span>,</span><br><span class="line">    <span class="attr">"birthDate"</span>: <span class="string">"2019/06/10"</span>,</span><br><span class="line">    <span class="attr">"about"</span>: <span class="string">"I love to go rock climbing"</span>,</span><br><span class="line">    <span class="attr">"interests"</span>:[</span><br><span class="line">         <span class="string">"sports"</span>,</span><br><span class="line">         <span class="string">"music"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关系数据库     ⇒ 数据库 ⇒ 表    ⇒ 行    ⇒ 列(Columns)<br>Elasticsearch    ⇒ 索引(Index)   ⇒ 类型(type)  ⇒ 文档(Docments)  ⇒ 字段(Fields)</p>
+<h2 id="ElasticSearch-安装"><a href="#ElasticSearch-安装" class="headerlink" title="ElasticSearch 安装"></a>ElasticSearch 安装</h2><p><strong>安装 jdk </strong></p>
+<p>由于 Elasticsearch 是由 Java 语言编写依赖 jdk。安装略。</p>
+<p><strong>下载 ElasticSearch 安装包 </strong></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxhc3RpYy5jby9jbi9kb3dubG9hZHMv" title="https://www.elastic.co/cn/downloads/">官方地址<i class="fa fa-external-link"></i></span></p>
+<p><strong>解压 ElasticSearch </strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-zxvf</span> <span class="selector-tag">elasticsearch-6</span><span class="selector-class">.4</span><span class="selector-class">.3</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+<p><strong>修改 elasticsearch.yml</strong></p>
+<p>允许外网连接配置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">network</span><span class="selector-class">.host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.2</span><span class="selector-class">.129</span></span><br><span class="line"><span class="selector-tag">http</span><span class="selector-class">.port</span>: 9200</span><br></pre></td></tr></table></figure>
+<p><strong>启动 ElasticSearch</strong></p>
+<p>因为安全问题 ElasticSearch 不让用 root 用户直接运行，所以要创建新用户。</p>
+<ul>
+<li>创建用户：<code>useradd elastic</code></li>
+<li>给用户赋权：<code>chown -R elastic:elastic /home/es/elasticsearch-6.4.3/</code></li>
+</ul>
+<p>切换用户启动<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su elastic</span><br><span class="line">sh <span class="regexp">/home/</span>es<span class="regexp">/elasticsearch-6.4.3/</span>bin<span class="regexp">/elasticsearch</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>测试 ElasticSearch</strong></p>
+<p><code>curl http://localhost:9200</code> 或者浏览器：<span class="exturl" data-url="aHR0cDovLzE5Mi4xNjguMi4xMjk6OTIwMA==" title="http://192.168.2.129:9200">http://192.168.2.129:9200<i class="fa fa-external-link"></i></span></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"K22mJd5"</span>,</span><br><span class="line">    <span class="attr">"cluster_name"</span>: <span class="string">"elasticsearch"</span>,</span><br><span class="line">    <span class="attr">"cluster_uuid"</span>: <span class="string">"R2qfXKtrQl2PwKdJMmPuMA"</span>,</span><br><span class="line">    <span class="attr">"version"</span>:&#123;</span><br><span class="line">        <span class="attr">"number"</span>: <span class="string">"5.5.2"</span>,</span><br><span class="line">        <span class="attr">"build_hash"</span>: <span class="string">"b2f0c09"</span>,</span><br><span class="line">        <span class="attr">"build_date"</span>: <span class="string">"2017-08-14T12:33:14.154Z"</span>,</span><br><span class="line">        <span class="attr">"build_snapshot"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"lucene_version"</span>: <span class="string">"6.6.0"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"tagline"</span>: <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Spring-Boot-整合-ElasticSearch"><a href="#Spring-Boot-整合-ElasticSearch" class="headerlink" title="Spring Boot 整合 ElasticSearch"></a>Spring Boot 整合 ElasticSearch</h2><p><span style="color: #f44336">持续更新中…</span></p>
+<p><img src="/images/Come on/Come on11.gif"></p>
 
       
     </div>
@@ -869,7 +898,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticSearch-是什么"><span class="nav-number">1.</span> <span class="nav-text">ElasticSearch 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticSearch-的优点"><span class="nav-number">2.</span> <span class="nav-text">ElasticSearch 的优点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticSearch-是什么"><span class="nav-number">1.</span> <span class="nav-text">ElasticSearch 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticSearch-的优点"><span class="nav-number">2.</span> <span class="nav-text">ElasticSearch 的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticSearch-应用场景"><span class="nav-number">3.</span> <span class="nav-text">ElasticSearch 应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticSearch-存储结构"><span class="nav-number">4.</span> <span class="nav-text">ElasticSearch 存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticSearch-安装"><span class="nav-number">5.</span> <span class="nav-text">ElasticSearch 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-整合-ElasticSearch"><span class="nav-number">6.</span> <span class="nav-text">Spring Boot 整合 ElasticSearch</span></a></li></ol></div>
             
 
           </div>
@@ -923,7 +952,7 @@
     </span>
     <!-- 博客字数统计 -->
     <span class="site-pv">
-      <i class="fa fa-pencil-square-o"></i> <span class="post-count">10.0k</span>
+      <i class="fa fa-pencil-square-o"></i> <span class="post-count">10.4k</span>
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
