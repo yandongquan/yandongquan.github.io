@@ -147,19 +147,19 @@
 
 
 
-  <meta name="description" content="什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf的主要目标是将优雅的自然模板带到开发工作流程中，并将HTML在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。">
+  <meta name="description" content="什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf 的主要目标是将优雅的自然模板带到开发工作流程中，并将 HTML 在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。">
 <meta name="keywords" content="分布式,Thymeleaf,页面静态化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分布式技术 Thymeleaf 页面静态化">
 <meta property="og:url" content="https://yandongquan.github.io/2019/06/16/分布式技术-Thymeleaf-页面静态化.html">
 <meta property="og:site_name" content="勤学苦练">
-<meta property="og:description" content="什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf的主要目标是将优雅的自然模板带到开发工作流程中，并将HTML在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。">
+<meta property="og:description" content="什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf 的主要目标是将优雅的自然模板带到开发工作流程中，并将 HTML 在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.thymeleaf.org/images/thymeleaf.png">
-<meta property="og:updated_time" content="2019-07-16T02:29:48.124Z">
+<meta property="og:updated_time" content="2019-07-16T08:39:23.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式技术 Thymeleaf 页面静态化">
-<meta name="twitter:description" content="什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf的主要目标是将优雅的自然模板带到开发工作流程中，并将HTML在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。">
+<meta name="twitter:description" content="什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf 的主要目标是将优雅的自然模板带到开发工作流程中，并将 HTML 在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。">
 <meta name="twitter:image" content="https://www.thymeleaf.org/images/thymeleaf.png">
 
 
@@ -525,14 +525,48 @@
       
         <p><img style="height:75px" src="https://www.thymeleaf.org/images/thymeleaf.png" alt="Thymeleaf"></p>
 <h2 id="什么是-Thymeleaf"><a href="#什么是-Thymeleaf" class="headerlink" title="什么是 Thymeleaf"></a>什么是 Thymeleaf</h2><p>Thymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。</p>
-<p>Thymeleaf的主要目标是将优雅的自然模板带到开发工作流程中，并将HTML在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。</p>
+<p>Thymeleaf 的主要目标是将优雅的自然模板带到开发工作流程中，并将 HTML 在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。</p>
 <a id="more"></a>
 <p>Thymeleaf 也是 Spring 官方推荐的模板引擎。</p>
-<p>本篇内容主要讲解页面静态化，关于 Thymeleaf 语法，大家可以去官方文档去学习。</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cudGh5bWVsZWFmLm9yZy9kb2N1bWVudGF0aW9uLmh0bWw=" title="https://www.thymeleaf.org/documentation.html">Thymeleaf 官方文档<i class="fa fa-external-link"></i></span></p>
-<h2 id="什么是静态化"><a href="#什么是静态化" class="headerlink" title="什么是静态化"></a>什么是静态化</h2><p>静态化是指把动态生成的 HTML 页面变为静态内容保存，以后用户的请求到来，直接访问静态页面，不再经过服务的渲染。</p>
-<p>而静态的HTML页面可以部署在nginx中，从而大大提高并发能力，减小tomcat压力。</p>
+<p>本篇内容主要讲解页面静态化，关于 Thymeleaf 语法，大家可以去官方文档去学习。<span class="exturl" data-url="aHR0cHM6Ly93d3cudGh5bWVsZWFmLm9yZy9kb2N1bWVudGF0aW9uLmh0bWw=" title="https://www.thymeleaf.org/documentation.html">Thymeleaf 官方文档<i class="fa fa-external-link"></i></span></p>
+<h2 id="什么是静态化"><a href="#什么是静态化" class="headerlink" title="什么是静态化"></a>什么是静态化</h2><p>静态化是指把动态生成的 HTML 页面变为静态内容保存，以后用户的请求到来，直接访问静态页面，不再经过服务的渲染。而静态的 HTML 页面可以部署在 Nginx 中，从而大大提高并发能力，减小 Tomcat 压力。</p>
 <h2 id="为什么要静态化"><a href="#为什么要静态化" class="headerlink" title="为什么要静态化"></a>为什么要静态化</h2><p>我们的页面是通过 Thymeleaf 模板引擎渲染后返回到客户端。在后台需要大量的数据查询，而后渲染得到 HTML 页面。会对<span style="color: #f44336">数据库造成压力，并且请求的响应时间过长，并发能力不高</span>。</p>
+<h2 id="如何实现静态化"><a href="#如何实现静态化" class="headerlink" title="如何实现静态化"></a>如何实现静态化</h2><p>静态化页面都是通过模板引擎来生成，而后保存到 Nginx 服务器来部署。</p>
+<p>常用的模板引擎：</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> Thymeleaf</li>
+<li style="list-style: none"><input type="checkbox"> Freemarker</li>
+<li style="list-style: none"><input type="checkbox"> Velocity</li>
+</ul>
+<h2 id="Thymeleaf-实现静态化"><a href="#Thymeleaf-实现静态化" class="headerlink" title="Thymeleaf 实现静态化"></a>Thymeleaf 实现静态化</h2><p>Thymeleaf 中的几个概念：</p>
+<ul>
+<li>Context：运行上下文</li>
+<li>TemplateResolver：模板解析器</li>
+<li>TemplateEngine：模板引擎</li>
+</ul>
+<blockquote>
+<p>Context</p>
+</blockquote>
+<p><strong>上下文：</strong> 用来保存模型数据，当模板引擎渲染时，可以从 Context 上下文中获取数据用于渲染。</p>
+<p>当与 SpringBoot 结合使用时，我们放入 Model 的数据就会被处理到 Context，作为模板渲染的数据使用。</p>
+<blockquote>
+<p>TemplateResolver</p>
+</blockquote>
+<p><strong>模板解析器：</strong>用来读取模板相关的配置，例如：模板存放的位置信息，模板文件名称，模板文件的类型等等。</p>
+<p>当与 SpringBoot 结合时，TemplateResolver 已经由其创建完成，并且各种配置也都有默认值，比如模板存放位置，其默认值就是：templates。比如模板文件类型，其默认值就是html。</p>
+<blockquote>
+<p>TemplateEngine</p>
+</blockquote>
+<p><strong>模板引擎：</strong>用来解析模板的引擎，需要使用到上下文、模板解析器。分别从两者中获取模板中需要的数据，模板文件。然后利用内置的语法规则解析，从而输出解析后的文件。来看下模板引擎进行处理的函数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">templateEngine.process(<span class="string">"模板名"</span>, context, writer);</span><br></pre></td></tr></table></figure>
+<p>三个参数：</p>
+<ul>
+<li>模板名称</li>
+<li>上下文：里面包含模型数据</li>
+<li>writer：输出目的地的流</li>
+</ul>
+<p>在输出时，我们可以指定输出的目的地，如果目的地是 Response 的流，那就是网络响应。如果目的地是本地文件，那就实现静态化了。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.javakz.backyardv2.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.thymeleaf.TemplateEngine;</span><br><span class="line"><span class="keyword">import</span> org.thymeleaf.context.Context;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.<span class="keyword">File</span>;</span><br><span class="line"><span class="keyword">import</span> java.io.FileWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> TemplateUtil &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger LOG = LoggerFactory.getLogger(TemplateUtil.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> TemplateEngine templateEngine;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> TemplateEngine engine = SpringUtil.getBean(TemplateEngine.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成静态文件</span></span><br><span class="line"><span class="comment">     * @param freeTempName 模板名称</span></span><br><span class="line"><span class="comment">     * @param context 数据内容</span></span><br><span class="line"><span class="comment">     * @param outFilePath 输出路径</span></span><br><span class="line"><span class="comment">     * @return</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> process(String freeTempName, Context context, String outFilePath) &#123;</span><br><span class="line">        <span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(outFilePath);</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">file</span>.getParentFile().exists()) &#123;</span><br><span class="line">            <span class="keyword">file</span>.getParentFile().mkdirs();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> (FileWriter fileWriter = <span class="keyword">new</span> FileWriter(<span class="keyword">file</span>)) &#123;</span><br><span class="line">            engine.process(freeTempName, context,fileWriter);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            LOG.error(<span class="string">"&#123;&#125;，静态化IO异常：&#123;&#125;"</span>, freeTempName, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String url = <span class="string">"D:/app/"</span>;</span><br><span class="line">        Context context = <span class="keyword">new</span> Context();</span><br><span class="line">        context.setVariable(<span class="string">"title"</span>, <span class="string">"world"</span>);</span><br><span class="line">        TemplateUtil.process(<span class="string">"404.html"</span>, context, url+<span class="string">"test.html"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -878,7 +912,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Thymeleaf"><span class="nav-number">1.</span> <span class="nav-text">什么是 Thymeleaf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是静态化"><span class="nav-number">2.</span> <span class="nav-text">什么是静态化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要静态化"><span class="nav-number">3.</span> <span class="nav-text">为什么要静态化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Thymeleaf"><span class="nav-number">1.</span> <span class="nav-text">什么是 Thymeleaf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是静态化"><span class="nav-number">2.</span> <span class="nav-text">什么是静态化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要静态化"><span class="nav-number">3.</span> <span class="nav-text">为什么要静态化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现静态化"><span class="nav-number">4.</span> <span class="nav-text">如何实现静态化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thymeleaf-实现静态化"><span class="nav-number">5.</span> <span class="nav-text">Thymeleaf 实现静态化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">6.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
             
 
           </div>
@@ -932,7 +966,7 @@
     </span>
     <!-- 博客字数统计 -->
     <span class="site-pv">
-      <i class="fa fa-pencil-square-o"></i> <span class="post-count">10.7k</span>
+      <i class="fa fa-pencil-square-o"></i> <span class="post-count">11.3k</span>
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
