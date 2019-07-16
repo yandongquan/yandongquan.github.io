@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[分布式技术 Thymeleaf 页面静态化]]></title>
     <url>%2F2019%2F06%2F16%2F%E5%88%86%E5%B8%83%E5%BC%8F%E6%8A%80%E6%9C%AF-Thymeleaf-%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96.html</url>
-    <content type="text"><![CDATA[什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf的主要目标是将优雅的自然模板带到开发工作流程中，并将HTML在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。 Thymeleaf 也是 Spring 官方推荐的模板引擎。 关于 Thymeleaf 语法，大家可以去官方文档去学习。 Thymeleaf 官方文档]]></content>
+    <content type="text"><![CDATA[什么是 ThymeleafThymeleaf 是一个适用于 Web 和独立环境的现代服务器端 Java 模板引擎。 Thymeleaf的主要目标是将优雅的自然模板带到开发工作流程中，并将HTML在浏览器中正确显示，并且可以作为静态原型，让开发团队能更容易地协作。 Thymeleaf 也是 Spring 官方推荐的模板引擎。 本篇内容主要讲解页面静态化，关于 Thymeleaf 语法，大家可以去官方文档去学习。 Thymeleaf 官方文档 什么是静态化静态化是指把动态生成的 HTML 页面变为静态内容保存，以后用户的请求到来，直接访问静态页面，不再经过服务的渲染。 而静态的HTML页面可以部署在nginx中，从而大大提高并发能力，减小tomcat压力。 为什么要静态化我们的页面是通过 Thymeleaf 模板引擎渲染后返回到客户端。在后台需要大量的数据查询，而后渲染得到 HTML 页面。会对数据库造成压力，并且请求的响应时间过长，并发能力不高。]]></content>
       <categories>
         <category>分布式</category>
       </categories>
@@ -112,8 +112,8 @@
       </categories>
       <tags>
         <tag>架构</tag>
-        <tag>Spring Boot</tag>
         <tag>微服务</tag>
+        <tag>Spring Boot</tag>
       </tags>
   </entry>
   <entry>
